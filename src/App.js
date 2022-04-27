@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import { ThemeProvider } from "@mui/material";
 
-function App() {
+import theme from "./theme";
+import { store } from "./store/store";
+import AppRouter from "./routes/AppRouter";
+// import AuthContextProvider from "./contexts/AuthContext";
+// import { AlertProvider } from './contexts/AlertContext';
+import { ToastContainer } from "react-toastify";
+import AuthContextProvider from "./services/auth/AuthContext";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <ToastContainer />
+          <AuthContextProvider>
+            <AppRouter />
+          </AuthContextProvider>
+        </ThemeProvider>
+      </Provider>
+    </>
   );
-}
+};
 
 export default App;
