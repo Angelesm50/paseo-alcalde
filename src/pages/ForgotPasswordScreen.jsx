@@ -10,16 +10,14 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
-import { forgotPassword } from "../actions/authAction";
 
-import Logo from "../assets/logo/blue/paseo-alcalde.png";
+import { useDispatch } from "react-redux";
+import { forgotPassword } from "../services/actions/authAction";
+
+import IconLock from "../assets/images/icons/yellow-lock.png";
 
 const ForgotPasswordScreen = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const { state } = useLocation();
 
   const sendEmailResetPassword = (e) => {
     e.preventDefault();
@@ -29,7 +27,6 @@ const ForgotPasswordScreen = () => {
       return;
     }
     dispatch(forgotPassword(email));
-    // navigate(state?.from ?? "/login");
   };
   return (
     <Container component="main" maxWidth="xs">
@@ -42,7 +39,7 @@ const ForgotPasswordScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="150" height="150" />
+        <img src={IconLock} alt="Logo" width="150" height="150" />
         <Typography component="div" variant="h5" sx={{ mt: 3 }}>
           ¿Olvidaste tú contraseña?
         </Typography>

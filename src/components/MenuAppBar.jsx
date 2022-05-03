@@ -11,9 +11,9 @@ import { blueGrey } from "@mui/material/colors";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { logout } from "../actions/authAction";
-import { clean } from "../actions/nominaAction";
-import Logo from "../assets/logo/white/paseo-alcalde.png";
+import { logout } from "../services/actions/authAction";
+import { clean } from "../services/actions/nominaAction";
+import Logo from "../assets/images/logo/white/paseo-alcalde.png";
 
 const MenuAppBar = () => {
   const dispatch = useDispatch();

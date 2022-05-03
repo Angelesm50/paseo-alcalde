@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 
 import { loadDataHelper } from "../../helpers/loadDataHelper";
-import { readNominaData } from "../../actions/nominaAction";
+import { readNominaData } from "../actions/nominaAction";
 import { auth } from "../../config/firebase";
-import { login } from "../../actions/authAction";
+import { login } from "../actions/authAction";
 
 const AuthContext = createContext({
   currentUser: null,

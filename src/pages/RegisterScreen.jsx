@@ -21,9 +21,8 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Logo from "../assets/logo/blue/paseo-alcalde.png";
-import { register } from "../actions/authAction";
-// var titleize = require("underscore.string/titleize");
+import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
+import { register } from "../services/actions/authAction";
 import titleize from "underscore.string/titleize";
 
 const RegisterScreen = () => {

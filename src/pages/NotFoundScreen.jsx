@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 
-import Logo from "../assets/logo/blue/paseo-alcalde.png";
+import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
 
 const NotFoundScreen = () => {
   return (

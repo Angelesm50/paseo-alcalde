@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 import {
   Button,
   Container,
@@ -8,19 +6,17 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
 
 import MenuAppBar from "../components/MenuAppBar";
-// import FormAdd from "../components/nomina/FormAdd";
-// import TableNomina from "../components/nomina/TableNomina";
 
-import Catedral from "../assets/catedral/catedral-gdl.jpg";
+import Jalisco from "../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jpg";
 import { blueGrey } from "@mui/material/colors";
 import GutterlessList from "../components/GutterlessList";
+import { useNavigate } from "react-router-dom";
 
 const styles = {
   paperContainer: {
-    backgroundImage: `linear-gradient(to bottom, rgba(31, 40, 69, 0.52), rgba(231, 230, 234, 0.73)), url(${Catedral})`,
+    backgroundImage: `linear-gradient(to bottom, rgba(32, 41, 69, 0.9) 1%, rgba(244, 244, 248, 0.5) 75%, rgba(244, 245, 248, 1) 100%), url(${Jalisco})`,
     width: "100%",
     height: "50vh",
     backgroundSize: "cover",
@@ -32,8 +28,7 @@ const styles = {
 };
 
 const AppScreen = () => {
-  const displayName = useSelector((state) => state.auth.displayName);
-  // const nominaData = useSelector((state) => state.nomina.data);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -41,18 +36,6 @@ const AppScreen = () => {
         <CssBaseline />
         <MenuAppBar />
         <Container>
-          <Box sx={{ width: "100%", maxWidth: 500 }}>
-            <Typography
-              variant="h6"
-              component="div"
-              gutterBottom
-              mt={2}
-              sx={{ color: blueGrey[50] }}
-            >
-              {displayName}
-            </Typography>
-          </Box>
-          <Divider sx={{ backgroundColor: blueGrey[50] }} />
           <Container maxWidth="xs">
             <Button
               fullWidth
@@ -61,17 +44,16 @@ const AppScreen = () => {
               color="primary"
               style={{ marginTop: "25vh" }}
               sx={{ mb: 3 }}
+              onClick={() => navigate("/map")}
             >
               Iniciar recorrido
             </Button>
           </Container>
-          {/* <FormAdd />
-          <TableNomina data={nominaData} /> */}
           <Typography
             variant="h5"
             component="div"
             gutterBottom
-            mt={2}
+            mt={5}
             sx={{ color: blueGrey[400] }}
           >
             Acerca de

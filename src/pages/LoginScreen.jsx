@@ -8,7 +8,6 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Typography from "@mui/material/Typography";
@@ -22,8 +21,11 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../assets/logo/blue/paseo-alcalde.png";
-import { googleLogin, emailAndPasswordLogin } from "../actions/authAction";
+import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
+import {
+  googleLogin,
+  emailAndPasswordLogin,
+} from "../services/actions/authAction";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -41,23 +43,23 @@ const LoginScreen = () => {
   };
 
   // const handleChange = (e) => {
-  //   this.setState({email: e.target.value})
-  // }
+  //   this.setState({ email: e.target.value });
+  // };
 
   const handleEmailAndPasswordLogin = (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     console.log(data.entries());
-    // const email = data.get("email");
-    // const password = data.get("password");
-    // if (email.trim() === "" || !email.trim().includes("@")) {
-    //   return;
-    // }
-    // if (password.trim().length < 8) {
-    //   return;
-    // }
-    // dispatch(emailAndPasswordLogin(email, password));
-    // navigate.replace(location.state?.from ?? "/app");
+    const email = data.get("email");
+    const password = data.get("password");
+    if (email.trim() === "" || !email.trim().includes("@")) {
+      return;
+    }
+    if (password.trim().length < 8) {
+      return;
+    }
+    dispatch(emailAndPasswordLogin(email, password));
+    navigate.replace(location.state?.from ?? "/app");
   };
 
   return (
@@ -88,7 +90,6 @@ const LoginScreen = () => {
               required
               id="email"
               name="email"
-              autoFocus
               autoComplete="off"
             />
           </FormControl>
@@ -152,9 +153,6 @@ const LoginScreen = () => {
                 color="primary"
               >
                 <GoogleIcon fontSize="inherit" />
-              </IconButton>
-              <IconButton aria-label="delete" size="large" color="primary">
-                <FacebookIcon fontSize="inherit" />
               </IconButton>
             </Grid>
           </Grid>

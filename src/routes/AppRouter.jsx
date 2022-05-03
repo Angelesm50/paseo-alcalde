@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import ProtectedRoute from "./ProtectedRoute";
 
@@ -7,8 +12,9 @@ import LoginScreen from "../pages/LoginScreen";
 import RegisterScreen from "../pages/RegisterScreen";
 import WelcomeScreen from "../pages/WelcomeScreen";
 import ForgotPasswordScreen from "../pages/ForgotPasswordScreen";
-import NotFoundScreen from "../pages/NotFoundScreen";
 import ResetPasswordScreen from "../pages/ResetPasswordScreen";
+import MapScreen from "../pages/MapScreen";
+
 import { useAuth } from "../services/auth/AuthContext";
 
 const AppRouter = () => {
@@ -33,9 +39,9 @@ const AppRouter = () => {
               element={<ResetPasswordScreen />}
             />
             <Route path="/app" element={<AppScreen />} />
+            <Route path="/map" element={<MapScreen />} />
           </Route>
-          {/* <Route path="*" element={<Navigate to="/login" />} /> */}
-          <Route path="*" element={<NotFoundScreen />} />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
     </>

@@ -1,12 +1,10 @@
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 import { ThemeProvider } from "@mui/material";
 
-import theme from "./theme";
+import theme from "./config/theme";
 import { store } from "./store/store";
 import AppRouter from "./routes/AppRouter";
-// import AuthContextProvider from "./contexts/AuthContext";
-// import { AlertProvider } from './contexts/AlertContext';
-import { ToastContainer } from "react-toastify";
 import AuthContextProvider from "./services/auth/AuthContext";
 
 const App = () => {
