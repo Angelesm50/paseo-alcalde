@@ -60,7 +60,6 @@ const RegisterScreen = () => {
       }
     }
     const fullname = titleize(userData.fullname);
-    console.log("Formulario correcto");
     dispatch(register(fullname, userData.email, userData.password));
   };
   return (
@@ -94,7 +93,6 @@ const RegisterScreen = () => {
                 required
                 id="fullname"
                 name="fullname"
-                autoFocus
               />
             </FormControl>
             <FormControl fullWidth margin="normal" variant="standard">
@@ -167,28 +165,6 @@ const RegisterScreen = () => {
           >
             Registrarme
           </Button>
-          <Divider>
-            <Typography
-              variant="caption"
-              component="p"
-              style={{ textAlign: "center" }}
-            >
-              O INGRESA CON
-            </Typography>
-          </Divider>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            mt={2}
-            mb={2}
-          >
-            <Grid mt={1}>
-              <IconButton aria-label="delete" size="large" color="primary">
-                <GoogleIcon fontSize="inherit" />
-              </IconButton>
-            </Grid>
-          </Grid>
           <Grid
             container
             justifyContent="center"

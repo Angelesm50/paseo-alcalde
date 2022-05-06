@@ -33,6 +33,11 @@ const LoginScreen = () => {
   const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
 
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -42,9 +47,13 @@ const LoginScreen = () => {
     navigate("/app");
   };
 
-  // const handleChange = (e) => {
-  //   this.setState({ email: e.target.value });
-  // };
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setUserData({
+      ...userData,
+      [e.target.name]: value,
+    });
+  };
 
   const handleEmailAndPasswordLogin = (e) => {
     e.preventDefault();
@@ -91,12 +100,16 @@ const LoginScreen = () => {
               id="email"
               name="email"
               autoComplete="off"
+              onChange={handleChange}
+              value={userData.fullname}
             />
           </FormControl>
           <FormControl fullWidth margin="normal" variant="standard">
             <InputLabel htmlFor="password">Contraseña</InputLabel>
             <Input
               required
+              onChange={handleChange}
+              value={userData.fullname}
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"
@@ -127,6 +140,7 @@ const LoginScreen = () => {
             size="large"
             color="primary"
             sx={{ mt: 3, mb: 5 }}
+            disabled={!userData.email || !userData.password}
           >
             Iniciar Sesión
           </Button>

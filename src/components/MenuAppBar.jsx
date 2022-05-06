@@ -98,9 +98,9 @@ const MenuAppBar = () => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <MenuItem onClick={() => navigate("/my-profile")}>
+              {/* <MenuItem onClick={() => navigate("/my-profile")}>
                 Mi perfil
-              </MenuItem>
+              </MenuItem> */}
               {/* <MenuItem onClick={handleClose}>Ajustes</MenuItem> */}
               <MenuItem onClick={handleLogout}>Salir</MenuItem>
             </Menu>
