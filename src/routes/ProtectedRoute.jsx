@@ -5,22 +5,21 @@ export default function ProtectedRoute(props) {
   const { currentUser } = useAuth();
   const { pathname, state } = useLocation();
 
-  if (
-    pathname === "/" ||
-    pathname === "/login" ||
-    pathname === "/register" ||
-    pathname === "/forgot-password" ||
-    pathname === "/reset-password"
-  ) {
-    return currentUser ? (
-      <Navigate to={state?.from ?? "/app"} />
-    ) : (
-      <Outlet {...props} />
-    );
+  const paths = [
+    "/",
+    "/login",
+    "/register",
+    "/forgot-password",
+    "/reset-password",
+  ];
+
+  if (paths.includes(pathname)) {
+    return currentUser
+      ? (<Navigate to={ state?.from ?? "/app" }/>)
+      : (<Outlet { ...props } />);
   }
-  return currentUser ? (
-    <Outlet {...props} />
-  ) : (
-    <Navigate to="/login" state={{ from: pathname }} />
-  );
+
+  return currentUser
+    ? (<Outlet { ...props } />)
+    : (<Navigate to="/login" state={ { from: pathname } }/>);
 }
