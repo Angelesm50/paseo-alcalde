@@ -21,8 +21,8 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
-import { register } from "../services/actions/authAction";
+import Logo from "../../assets/images/logo/blue/paseo-alcalde.png";
+import { register } from "../../services/actions/authAction";
 import titleize from "underscore.string/titleize";
 
 const RegisterScreen = () => {
@@ -121,7 +121,7 @@ const RegisterScreen = () => {
                 }}
               />
               <FormHelperText id="password-helper-text">
-                Usa 8 o más caracteres con una combinación de letras, números y
+                Usa 8 o más caracteres en combinación de letras, números y
                 símbolos
               </FormHelperText>
             </FormControl>
@@ -186,9 +186,6 @@ const RegisterScreen = () => {
             <Grid mt={1}>
               <IconButton aria-label="delete" size="large" color="primary">
                 <GoogleIcon fontSize="inherit" />
-              </IconButton>
-              <IconButton aria-label="delete" size="large" color="primary">
-                <FacebookIcon fontSize="inherit" />
               </IconButton>
             </Grid>
           </Grid>

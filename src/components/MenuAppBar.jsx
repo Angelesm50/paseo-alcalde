@@ -14,8 +14,10 @@ import { useDispatch } from "react-redux";
 import { logout } from "../services/actions/authAction";
 import { clean } from "../services/actions/nominaAction";
 import Logo from "../assets/images/logo/white/paseo-alcalde.png";
+import { useNavigate } from "react-router-dom";
 
 const MenuAppBar = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -96,8 +98,10 @@ const MenuAppBar = () => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              {/* <MenuItem onClick={handleClose}>Mi perfil</MenuItem>
-              <MenuItem onClick={handleClose}>Ajustes</MenuItem> */}
+              <MenuItem onClick={() => navigate("/my-profile")}>
+                Mi perfil
+              </MenuItem>
+              {/* <MenuItem onClick={handleClose}>Ajustes</MenuItem> */}
               <MenuItem onClick={handleLogout}>Salir</MenuItem>
             </Menu>
           </Box>

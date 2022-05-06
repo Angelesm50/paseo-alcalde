@@ -12,9 +12,9 @@ import {
 } from "@mui/material";
 
 import { useDispatch } from "react-redux";
-import { forgotPassword } from "../services/actions/authAction";
+import { forgotPassword } from "../../services/actions/authAction";
 
-import IconLock from "../assets/images/icons/yellow-lock.png";
+import IconLock from "../../assets/images/icons/yellow-lock.png";
 
 const ForgotPasswordScreen = () => {
   const dispatch = useDispatch();

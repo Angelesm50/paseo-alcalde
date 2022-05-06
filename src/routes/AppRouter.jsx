@@ -7,15 +7,16 @@ import {
 
 import ProtectedRoute from "./ProtectedRoute";
 
-import AppScreen from "../pages/AppScreen";
-import LoginScreen from "../pages/LoginScreen";
-import RegisterScreen from "../pages/RegisterScreen";
-import WelcomeScreen from "../pages/WelcomeScreen";
-import ForgotPasswordScreen from "../pages/ForgotPasswordScreen";
-import ResetPasswordScreen from "../pages/ResetPasswordScreen";
 import MapScreen from "../pages/MapScreen";
+import AppScreen from "../pages/AppScreen";
+import WelcomeScreen from "../pages/WelcomeScreen";
+import LoginScreen from "../pages/auth/LoginScreen";
+import RegisterScreen from "../pages/auth/RegisterScreen";
+import ForgotPasswordScreen from "../pages/auth/ForgotPasswordScreen";
+import ResetPasswordScreen from "../pages/auth/ResetPasswordScreen";
 
 import { useAuth } from "../services/auth/AuthContext";
+import MyProfile from "../pages/profile/MyProfileScreen";
 
 const AppRouter = () => {
   const { currentUser } = useAuth();
@@ -40,8 +41,9 @@ const AppRouter = () => {
             />
             <Route path="/app" element={<AppScreen />} />
             <Route path="/map" element={<MapScreen />} />
+            <Route path="/my-profile" element={<MyProfile />} />
           </Route>
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </>

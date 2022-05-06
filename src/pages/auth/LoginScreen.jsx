@@ -21,11 +21,11 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
+import Logo from "../../assets/images/logo/blue/paseo-alcalde.png";
 import {
   googleLogin,
   emailAndPasswordLogin,
-} from "../services/actions/authAction";
+} from "../../services/actions/authAction";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
