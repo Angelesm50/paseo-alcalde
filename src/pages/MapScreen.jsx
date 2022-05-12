@@ -17,6 +17,7 @@ import usePosition from "../hooks/usePosition";
 import {useEffect, useState} from "react";
 import {default as data} from "../assets/images/makers/data.json";
 import {distance} from "../helpers/distance";
+import ListView from "../components/maps/ListView";
 
 const MapScreen = () => {
    const position = usePosition();
@@ -52,6 +53,7 @@ const MapScreen = () => {
 
    return (
       <>
+
          <CssBaseline/>
          <Box
             sx={{
@@ -124,7 +126,18 @@ const MapScreen = () => {
                </Box>
             </Box>
          </Toolbar>
-         <Container sx={{mt: 20}}>
+         <br/>
+         <hr/>
+         <Box sx={{
+            // marginTop: 4,
+            // p: 0,
+            // width: "100%",
+            // height: 300,
+
+         }}>
+            <ListView places={data.places}/>
+         </Box>
+         <Container sx={{}}>
             <Link href={"app"} variant="body2" color="secondary">
                Atras
             </Link>
