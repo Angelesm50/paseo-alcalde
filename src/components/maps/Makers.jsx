@@ -8,10 +8,15 @@ const Markers = (props) => {
                     <hr/>
                     <div><p>{place.description}</p>
                     </div>
-                    <div><img width={'100%'}
-                              height={'100%'}
-                              src="https://static.vecteezy.com/system/resources/previews/004/615/716/large_2x/play-pause-media-icon-round-buttons-free-vector.jpg"
-                              alt="Iglesia"/>
+                    <div>
+                        <audio
+                            type
+                            controls
+                            autoPlay
+                            src={''}>
+                            Your browser does not support the
+                            <code>audio</code> element.
+                        </audio>
                     </div>
                 </div>
             </Popup>

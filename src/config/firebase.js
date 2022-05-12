@@ -13,9 +13,9 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-const firebsaseApp = initializeApp(firebaseConfig);
-const auth = getAuth(firebsaseApp);
-const db = getFirestore(firebsaseApp);
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
+const db = getFirestore(firebaseApp);
 const googleAuthProvider = new GoogleAuthProvider();
 
-export { firebsaseApp, db, auth, googleAuthProvider };
+export { firebaseApp, db, auth, googleAuthProvider };
