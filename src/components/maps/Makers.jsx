@@ -4,15 +4,10 @@ const Markers = (props) => {
         <Marker key={i} position={place.geometry} icon={props.icon}>
             <Popup>
                 <div>
-                    <h4>{place.name}</h4>
+                    <b>{place.name}</b>
+                    <p style={{marginTop: -1}}>{place.autor}</p>
                     <hr/>
-                    <div><p>{place.description}</p>
-                    </div>
-                    <div>
-                        <audio
-                            controls
-                            src="../../assets/audio/audio1.mpeg">
-                        </audio>
+                    <div><p>{place.shortTitle}</p>
                     </div>
                 </div>
             </Popup>

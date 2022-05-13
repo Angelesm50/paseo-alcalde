@@ -7,7 +7,7 @@
         -103.96839434083778
       ],
       "description": "Texto de ejemplo aqui",
-      "audio": "audio1"
+      "audio": "rutaGastronomica"
     },
     {
       "name": "Control Escolar",
@@ -19,7 +19,7 @@
       "audio": "audio-test-2"
     },
     {
-      "name": "Coordiacion",
+      "name": "Coordinacion",
       "geometry": [
         20.536832327860875,
         -103.96770635421397
