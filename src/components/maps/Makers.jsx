@@ -10,12 +10,8 @@ const Markers = (props) => {
                     </div>
                     <div>
                         <audio
-                            type
                             controls
-                            autoPlay
-                            src={''}>
-                            Your browser does not support the
-                            <code>audio</code> element.
+                            src="../../assets/audio/audio1.mpeg">
                         </audio>
                     </div>
                 </div>
