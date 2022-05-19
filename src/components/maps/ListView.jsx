@@ -1,37 +1,28 @@
-import {firebaseApp} from "../../config/firebase";
-import {getDownloadURL, getStorage, ref} from "firebase/storage";
+import {ListItem} from "@mui/material";
+import ListItemText from "@mui/material/ListItemText";
+import Divider from "@mui/material/Divider";
+import {Box} from "@mui/system";
 
-import {useEffect} from "react";
-import {toast} from "react-toastify";
+import Dialog from '../Dialog';
 
 
 const ListView = ({places}) => {
-   const storage = getStorage(firebaseApp);
-
-   useEffect(() => {
-      places.map(place => getDownloadURL(ref(storage, `audios/${place.audio}`))
-         .then(url => place.src = url)
-         .catch(error => toast.error(error?.message ?? "Something went wrong")));
-   }, []);
-
    return places.map((place, i) => (
-      <ul key={i}>
-         <li>
-            <h4>{place.name}</h4>
-            <div><p>{place.shortTitle}</p>
-            </div>
-            <div>
-               <audio
-                  id={place.audio}
-                  src={place.src}
-                  controls
+      <div>
+         <Box key={i}>
+            <ListItem
+               secondaryAction={
+               <Dialog description={place.description} name={place.name} image={place.image}>
+               </Dialog>}>
+               <ListItemText
+                  primary={`${place.name}`}
+                  secondary={`${place["autor"]}`}
                />
-            </div>
-            <hr/>
-         </li>
-
-      </ul>
-))
+            </ListItem>
+            <Divider/>
+         </Box>
+      </div>
+   ))
 }
 
 

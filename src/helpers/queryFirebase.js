@@ -1,7 +1,4 @@
-import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {firebaseApp} from "../config/firebase";
-import {useEffect, useState} from "react";
-import {toast} from "react-toastify";
 
 export const queryFirebase = (name) => {
    const storageRef = firebaseApp.storage().ref();
@@ -18,15 +15,10 @@ export const queryFirebase = (name) => {
          xhr.open('GET', url);
          xhr.send();
 
-         // Or inserted into an <img> element
-         var img = document.getElementById('myimg');
-         img.setAttribute('src', url);
       })
       .catch((error) => {
-         // Handle any errors
       });
 
 
-   let img;
-   return img
+   return storageRef
 }

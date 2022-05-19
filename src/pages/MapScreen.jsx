@@ -7,15 +7,15 @@ import {default as data} from "../assets/images/makers/murales.json";
 import {distance} from "../helpers/distance";
 import ListView from "../components/maps/ListView";
 import {usePosition} from "../hooks/usePosition";
-import {queryFirebase} from "../helpers/queryFirebase";
-import {getDownloadURL, getStorage, ref} from "firebase/storage";
-import {toast} from "react-toastify";
-import {firebaseApp} from "../config/firebase";
+import List from "@mui/material/List";
+import {auth} from "../config/firebase";
 
 const MapScreen = () => {
    const [anchorEl, setAnchorEl] = useState(null);
    const [play, setPlay] = useState(false);
    const position = usePosition(true, {enableHighAccuracy: true});
+   const user = auth.currentUser;
+
 
    const handleMenu = (event) => setAnchorEl(event.currentTarget);
    const handleClose = () => setAnchorEl(null);
@@ -28,9 +28,10 @@ const MapScreen = () => {
       }));
 
       const place = distanceInMeter.find(place => place.distance >= 0 && place.distance <= 5);
-
+      // const urlA = queryFirebase(place.audio);
+      // console.log(urlA);
       if (place && !play) {
-         alert(`¡Estás cerca de ${place.audio}!`);
+         alert(`¡Estás cerca de ${place.name}!`);
          setPlay(true);
       }
       if (!place && play) {
@@ -69,7 +70,7 @@ const MapScreen = () => {
             >
                <Box>
                   <Typography component="h1" variant="h6">
-                     Mi primera ruta
+                     {user.displayName}
                   </Typography>
                   <Typography
                      component="span"
@@ -123,7 +124,9 @@ const MapScreen = () => {
             // height: 300,
 
          }}>
-            <ListView places={data.places}/>
+            <List>
+               <ListView places={data.places}/>
+            </List>
          </Box>
          <Container sx={{}}>
             <Link href={'app'}>
