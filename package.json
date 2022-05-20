@@ -15,6 +15,7 @@
     "firebase": "^9.7.0",
     "i18next": "^21.6.16",
     "leaflet": "^1.8.0",
+    "leaflet-routing-machine": "^3.2.12",
     "react": "^18.1.0",
     "react-audio-player": "^0.17.0",
     "react-dom": "^18.1.0",

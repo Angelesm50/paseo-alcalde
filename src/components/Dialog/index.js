@@ -12,7 +12,7 @@ export default function ScrollDialog({description, name, image}) {
    const [open, setOpen] = useState(false);
    const descriptionElementRef = useRef(null);
 
-   image = 'https://cdn.pixabay.com/photo/2021/09/02/16/48/cat-6593947_960_720.jpg';
+   // image = 'https://cdn.pixabay.com/photo/2021/09/02/16/48/cat-6593947_960_720.jpg';
 
    const handleClickOpen = () => () => {
       setOpen(true);
