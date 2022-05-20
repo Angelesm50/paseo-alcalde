@@ -26,10 +26,8 @@ const MapScreen = () => {
          audio: place.audio,
          distance: distance(place.geometry[0], place.geometry[1], position.lat, position.lng, "K") * 1000
       }));
-
       const place = distanceInMeter.find(place => place.distance >= 0 && place.distance <= 5);
-      // const urlA = queryFirebase(place.audio);
-      // console.log(urlA);
+
       if (place && !play) {
          alert(`¡Estás cerca de ${place.name}!`);
          setPlay(true);
@@ -37,12 +35,10 @@ const MapScreen = () => {
       if (!place && play) {
          setPlay(false);
       }
-
    }, [play, position])
 
    return (
       <>
-
          <CssBaseline/>
          <Box
             sx={{

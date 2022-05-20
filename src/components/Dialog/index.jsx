@@ -12,20 +12,21 @@ export default function ScrollDialog({description, name, image}) {
    const [open, setOpen] = useState(false);
    const descriptionElementRef = useRef(null);
 
-   // image = 'https://cdn.pixabay.com/photo/2021/09/02/16/48/cat-6593947_960_720.jpg';
-
-   const handleClickOpen = () => () => {
-      setOpen(true);
-   };
+   const handleClickOpen = () => () => setOpen(true);
    const handleClose = () => setOpen(false);
 
    useEffect(() => {
-      if (open) {
-         const {current: descriptionElement} = descriptionElementRef;
-         if (descriptionElement !== null) {
-            descriptionElement.focus();
-         }
+      if (!open) {
+         return;
       }
+
+      const { current: descriptionElement } = descriptionElementRef;
+
+      if (descriptionElement === null) {
+         return;
+      }
+
+      descriptionElement.focus();
    }, [open]);
 
    return (
@@ -43,7 +44,7 @@ export default function ScrollDialog({description, name, image}) {
             <DialogTitle id="scroll-dialog-title">{name}</DialogTitle>
             <DialogContent dividers={true}>
                <DialogContentText id="scroll-dialog-description" ref={descriptionElementRef} tabIndex={-1}>
-                  <img src={image} alt={'test'} style={{width: "100%", height: "100%"}}/>
+                  <img src={image} alt={name} style={{width: "100%", height: "100%"}}/>
                   {description}
                </DialogContentText>
             </DialogContent>

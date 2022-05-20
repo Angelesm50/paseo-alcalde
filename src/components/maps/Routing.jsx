@@ -1,15 +1,26 @@
-import { MapLayer } from "react-leaflet";
 import L from "leaflet";
+import { createControlComponent } from "@react-leaflet/core";
 import "leaflet-routing-machine";
-import { withLeaflet } from "react-leaflet";
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
+import { default as data } from "../../assets/images/makers/murales.json";
 
-class Routing extends MapLayer {
-   createLeafletElement() {
-      const { map } = this.props;
-      let leafletElement = L.Routing.control({
-         waypoints: [L.latLng(27.67, 85.316), L.latLng(27.68, 85.321)]
-      }).addTo(map.leafletElement);
-      return leafletElement.getPlan();
-   }
-}
-export default withLeaflet(Routing);
+
+const createRoutineMachineLayer = () => {
+  const places = data.places.map(place => L.latLng(place.geometry[0], place.geometry[1]));
+  return L.Routing.control({
+    show: false,
+    waypoints: places,
+    lineOptions: {
+      styles: [
+        {
+          color: '#757de8',
+        },
+      ],
+    },
+    createMarker: () => null
+  });
+};
+
+const RoutingMachine = createControlComponent(createRoutineMachineLayer);
+
+export default RoutingMachine;
