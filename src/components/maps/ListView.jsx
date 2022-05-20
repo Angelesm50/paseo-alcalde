@@ -21,7 +21,7 @@ const ListView = ({ places }) => {
         toast.error(error?.message ?? "Something went wrong");
       }
     })();
-  }, [places]);
+  }, [places, storage]);
 
   return places.map((place, i) => (
     <div>

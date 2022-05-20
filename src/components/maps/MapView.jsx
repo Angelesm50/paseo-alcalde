@@ -11,7 +11,7 @@ const MapView = (props) => {
 
   return (
     <MapContainer style={ { width: "100%", height: "300px" } }
-                  center={ [20.536937821169772, -103.96649936013992] }
+                  center={ [20.689010732827306, -103.34976874964553] }
                   zoom={ 16 }>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
