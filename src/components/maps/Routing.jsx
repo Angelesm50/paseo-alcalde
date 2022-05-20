@@ -13,7 +13,9 @@ const createRoutineMachineLayer = () => {
     lineOptions: {
       styles: [
         {
-          color: '#757de8',
+          color: 'blue',
+          weight: 4,
+          opacity: 0.6
         },
       ],
     },

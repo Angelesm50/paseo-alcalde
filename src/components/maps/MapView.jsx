@@ -10,7 +10,7 @@ const MapView = (props) => {
   const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'))
 
   return (
-    <MapContainer style={ { width: "100%", height: "300px" } }
+    <MapContainer style={ { width: "100%", height: "300px", position: 'absolute', zIndex: 0 } }
                   center={ [20.689010732827306, -103.34976874964553] }
                   zoom={ 16 }>
       <TileLayer
