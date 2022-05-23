@@ -29,7 +29,7 @@ const theme = responsiveFontSizes(
         default: "#F4F5F8", //gray
       },
       primary: {
-        main: "#202945", //indigo
+        main: "#006d82", // teal blue
       },
       secondary: {
         main: "#FF8C40", //orange
@@ -57,6 +57,7 @@ const theme = responsiveFontSizes(
           root: {
             borderRadius: 28,
             textTransform: "capitalize",
+            fontSize: 15,
           },
         },
       },

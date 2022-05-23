@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-import LogoTitle from "../assets/images/logo/white/paseo-alcalde-title.png";
+import LogoApp from "../assets/images/logo/paseo-literario.png";
 import { Box, Container, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,7 @@ import LocationPattern from "../assets/images/patterns/locations.png";
 const styles = {
   paperContainer: {
     background: "#202945",
-    backgroundImage: `linear-gradient(180deg, rgba(32, 41, 69, 0.89) 40%, rgba(87, 119, 222, 0.82) 95%), url(${LocationPattern})`,
+    backgroundImage: `linear-gradient(180deg, rgba(0, 109, 130, 1) 35%, rgba(177, 212, 205, 0.82) 95%), url(${LocationPattern})`,
     width: "100%",
     height: "100vh",
     backgroundSize: "cover",
@@ -29,17 +29,17 @@ const WelcomeScreen = () => {
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
-            paddingTop: 15,
-            paddingBottom: 20,
+            paddingTop: 20,
+            paddingBottom: 24,
             display: "flex",
             justifyContent: "center",
             alignContent: "center",
           }}
         >
           <img
-            src={LogoTitle}
+            src={LogoApp}
             alt="Logo de Paseo Alcalde"
-            width="120px"
+            width="250px"
             height="auto"
           />
         </Box>
@@ -48,7 +48,6 @@ const WelcomeScreen = () => {
           fullWidth
           variant="contained"
           size="large"
-          sx={{ mt: 3, mb: 2 }}
           style={{
             backgroundColor: "white",
             color: "#353F5F",
@@ -63,7 +62,7 @@ const WelcomeScreen = () => {
           variant="contained"
           size="large"
           color="primary"
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ mt: 2 }}
           onClick={() => navigate("register")}
         >
           Registrarse
