@@ -1,4 +1,16 @@
-import {Box, Button, Chip, Container, CssBaseline, IconButton, Link, Menu, MenuItem, Toolbar, Typography,} from "@mui/material";
+import {
+   Box,
+   Button,
+   Chip,
+   Container,
+   CssBaseline,
+   IconButton,
+   Link,
+   Menu,
+   MenuItem,
+   Toolbar,
+   Typography,
+} from "@mui/material";
 import {blueGrey} from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
@@ -131,8 +143,8 @@ const MapScreen = () => {
                   variant="contained"
                   size="large"
                   color="primary"
-                  style={{ marginTop: "25vh" }}
-                  sx={{ mb: 3 }}
+                  style={{marginTop: "25vh"}}
+                  sx={{mb: 3}}
                >
                   Regresar
                </Button>
