@@ -21,7 +21,8 @@ export const googleLogin = () => {
         dispatch(login(user.uid, user.displayName));
       })
       .catch((error) => {
-        toast.error(firebaseErrors[error.message] || error.message);
+        // toast.error(firebaseErrors[error.message] || error.message);
+        console.log(error);
       });
   };
 };

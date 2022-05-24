@@ -11,7 +11,7 @@ import {
    Toolbar,
    Typography,
 } from "@mui/material";
-import {blueGrey} from "@mui/material/colors";
+import { blueGrey } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
 import {useEffect, useState} from "react";
@@ -57,7 +57,7 @@ const MapScreen = () => {
                m: 0,
                p: 0,
                width: "100%",
-               height: 300,
+               height: "60vh",
                backgroundColor: "primary.dark", "&:hover": {
                   backgroundColor: "primary.main",
                   opacity: [0.9, 0.8, 0.7],

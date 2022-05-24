@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 
 import { logout } from "../services/actions/authAction";
 import { clean } from "../services/actions/nominaAction";
-import Logo from "../assets/images/logo/white/paseo-alcalde.png";
+import Logo from "../assets/images/logo/fray-gray.png";
 
 const MenuAppBar = () => {
   const dispatch = useDispatch();
@@ -36,41 +36,33 @@ const MenuAppBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar
         position="static"
-        style={{ background: "transparent", boxShadow: "none" }}
+        style={{
+          background: "transparent",
+          boxShadow: "none",
+        }}
       >
-        <Toolbar>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton> */}
-          {/* <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            color="primary"
-          >
-            <img src={Logo} alt="Logo" width="30" height="30" />
-          </Typography> */}
-          <Box
-            sx={{
-              marginLeft: "auto",
-              height: 30,
-              width: 30,
-            }}
-            component="img"
-            alt="Logo"
-            src={Logo}
-          />
-          <Box
-            sx={{
-              marginLeft: "auto",
-            }}
-          >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Box component="div">
+            <Box
+              sx={{
+                height: 48,
+                width: 48,
+              }}
+            />
+          </Box>
+
+          <Box component="div" sx={{ alignSelf: "end" }}>
+            <Box
+              sx={{
+                height: 40,
+              }}
+              component="img"
+              alt="Logo"
+              src={Logo}
+            />
+          </Box>
+
+          <Box>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -96,8 +88,10 @@ const MenuAppBar = () => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              {/* <MenuItem onClick={handleClose}>Mi perfil</MenuItem>
-              <MenuItem onClick={handleClose}>Ajustes</MenuItem> */}
+              {/* <MenuItem onClick={() => navigate("/my-profile")}>
+                Mi perfil
+              </MenuItem> */}
+              {/* <MenuItem onClick={handleClose}>Ajustes</MenuItem> */}
               <MenuItem onClick={handleLogout}>Salir</MenuItem>
             </Menu>
           </Box>

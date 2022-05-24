@@ -12,7 +12,7 @@ const MapView = (props) => {
    const LatLng = {lat: props.latitude, lng: props.longitude};
 
    return (
-      <MapContainer style={{width: "100%", height: "300px", position: 'absolute', zIndex: 0}}
+      <MapContainer style={{width: "100%", height: "60vh", position: 'absolute', zIndex: 0}}
                     center={[20.689010732827306, -103.34976874964553]}
                     zoom={16}>
          <TileLayer
@@ -24,7 +24,6 @@ const MapView = (props) => {
          <Routing places={props.places} user={LatLng}/>
       </MapContainer>
    )
-
 }
 
 export default MapView;

@@ -21,17 +21,22 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
+import Logo from "../../assets/images/logo/fray-teal.png";
 import {
   googleLogin,
   emailAndPasswordLogin,
-} from "../services/actions/authAction";
+} from "../../services/actions/authAction";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const [showPassword, setShowPassword] = useState(false);
+
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -42,9 +47,13 @@ const LoginScreen = () => {
     navigate("/app");
   };
 
-  // const handleChange = (e) => {
-  //   this.setState({ email: e.target.value });
-  // };
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setUserData({
+      ...userData,
+      [e.target.name]: value,
+    });
+  };
 
   const handleEmailAndPasswordLogin = (e) => {
     e.preventDefault();
@@ -73,7 +82,7 @@ const LoginScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="30" height="30" />
+        <img src={Logo} alt="Logo" height="40" />
         <Typography component="h1" variant="h6">
           Bienvenido
         </Typography>
@@ -91,12 +100,16 @@ const LoginScreen = () => {
               id="email"
               name="email"
               autoComplete="off"
+              onChange={handleChange}
+              value={userData.fullname}
             />
           </FormControl>
           <FormControl fullWidth margin="normal" variant="standard">
             <InputLabel htmlFor="password">Contraseña</InputLabel>
             <Input
               required
+              onChange={handleChange}
+              value={userData.fullname}
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"
@@ -113,9 +126,13 @@ const LoginScreen = () => {
               }
             />
           </FormControl>
-          <Grid container justifyContent="flex-end" sx={{ mt: 3, mb: 3 }}>
+          <Grid container justifyContent="flex-end" sx={{ mt: 2 }}>
             <Link href="forgot-password" variant="body2" color="secondary">
-              <Typography variant="body2" component="span">
+              <Typography
+                variant="body2"
+                component="span"
+                sx={{ fontWeight: 500 }}
+              >
                 ¿Olvidaste tú contraseña?
               </Typography>
             </Link>
@@ -126,7 +143,8 @@ const LoginScreen = () => {
             variant="contained"
             size="large"
             color="primary"
-            sx={{ mt: 3, mb: 5 }}
+            sx={{ mt: 5, mb: 5 }}
+            disabled={!userData.email || !userData.password}
           >
             Iniciar Sesión
           </Button>
@@ -165,7 +183,12 @@ const LoginScreen = () => {
             <Typography variant="body2" component="span">
               ¿No tienes una cuenta? &nbsp;
             </Typography>
-            <Link href="register" variant="body2" color="secondary">
+            <Link
+              href="register"
+              variant="body2"
+              color="secondary"
+              sx={{ fontWeight: 500 }}
+            >
               Registrate
             </Link>
           </Grid>

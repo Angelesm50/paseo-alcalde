@@ -1,5 +1,7 @@
-import {Marker} from "react-leaflet";
+import { Marker } from "react-leaflet";
 
-const MarkerUser = ({ position, icon }) => <Marker position={ position } icon={ icon }/>
+const MarkerUser = ({ position, icon }) => (
+  <Marker position={position} icon={icon} />
+);
 
 export default MarkerUser;

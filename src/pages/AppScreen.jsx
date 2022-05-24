@@ -15,55 +15,55 @@ import GutterlessList from "../components/GutterlessList";
 import {useNavigate} from "react-router-dom";
 
 const styles = {
-   paperContainer: {
-      backgroundImage: `linear-gradient(to bottom, rgba(32, 41, 69, 0.9) 1%, rgba(244, 244, 248, 0.5) 75%, rgba(244, 245, 248, 1) 100%), url(${Jalisco})`,
-      width: "100%",
-      height: "50vh",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      borderRadius: 0,
-      backgroundColor: "#cccccc",
-      backgroundPosition: "center",
-   },
+  paperContainer: {
+    backgroundImage: `linear-gradient(to bottom, rgba(0, 109, 130, 1) 0%, rgba(244, 244, 248, 0.2) 35%, rgba(244, 245, 248, 1) 100%), url(${Jalisco})`,
+    width: "100%",
+    height: "50vh",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    borderRadius: 0,
+    backgroundColor: "#cccccc",
+    backgroundPosition: "center",
+  },
 };
 
 const AppScreen = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
-   return (
-      <>
-         <Paper elevation={0} style={styles.paperContainer}>
-            <CssBaseline/>
-            <MenuAppBar/>
-            <Container>
-               <Container maxWidth="xs">
-                  <Button
-                     fullWidth
-                     variant="contained"
-                     size="large"
-                     color="primary"
-                     style={{marginTop: "25vh"}}
-                     sx={{mb: 3}}
-                     onClick={() => navigate("/map")}
-                  >
-                     Iniciar recorrido
-                  </Button>
-               </Container>
-               <Typography
-                  variant="h5"
-                  component="div"
-                  gutterBottom
-                  mt={5}
-                  sx={{color: blueGrey[400]}}
-               >
-                  Acerca de
-               </Typography>
-               <Divider/>
-               <GutterlessList/>
-            </Container>
-         </Paper>
-      </>
-   );
+  return (
+    <>
+      <Paper elevation={0} style={styles.paperContainer}>
+        <CssBaseline />
+        <MenuAppBar />
+        <Container>
+          <Container maxWidth="xs">
+            <Button
+              fullWidth
+              variant="contained"
+              size="large"
+              color="primary"
+              style={{ marginTop: "25vh" }}
+              sx={{ mb: 3 }}
+              onClick={() => navigate("/map")}
+            >
+              Iniciar recorrido
+            </Button>
+          </Container>
+          <Typography
+            variant="h5"
+            component="div"
+            gutterBottom
+            mt={8}
+            sx={{ color: blueGrey[400], fontWeight: 500 }}
+          >
+            Acerca de
+          </Typography>
+          <Divider />
+          <GutterlessList />
+        </Container>
+      </Paper>
+    </>
+  );
 };
 
 export default AppScreen;

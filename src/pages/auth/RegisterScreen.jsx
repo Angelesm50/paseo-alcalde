@@ -21,8 +21,8 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Logo from "../assets/images/logo/blue/paseo-alcalde.png";
-import { register } from "../services/actions/authAction";
+import Logo from "../../assets/images/logo/fray-teal.png";
+import { register } from "../../services/actions/authAction";
 import titleize from "underscore.string/titleize";
 
 const RegisterScreen = () => {
@@ -60,7 +60,6 @@ const RegisterScreen = () => {
       }
     }
     const fullname = titleize(userData.fullname);
-    console.log("Formulario correcto");
     dispatch(register(fullname, userData.email, userData.password));
   };
   return (
@@ -74,7 +73,7 @@ const RegisterScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="30" height="30" />
+        <img src={Logo} alt="Logo" height="40" />
         <Typography component="h1" variant="h6">
           Registro
         </Typography>
@@ -94,7 +93,6 @@ const RegisterScreen = () => {
                 required
                 id="fullname"
                 name="fullname"
-                autoFocus
               />
             </FormControl>
             <FormControl fullWidth margin="normal" variant="standard">
@@ -121,7 +119,7 @@ const RegisterScreen = () => {
                 }}
               />
               <FormHelperText id="password-helper-text">
-                Usa 8 o más caracteres con una combinación de letras, números y
+                Usa 8 o más caracteres en combinación de letras, números y
                 símbolos
               </FormHelperText>
             </FormControl>
@@ -167,31 +165,6 @@ const RegisterScreen = () => {
           >
             Registrarme
           </Button>
-          <Divider>
-            <Typography
-              variant="caption"
-              component="p"
-              style={{ textAlign: "center" }}
-            >
-              O INGRESA CON
-            </Typography>
-          </Divider>
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            mt={2}
-            mb={2}
-          >
-            <Grid mt={1}>
-              <IconButton aria-label="delete" size="large" color="primary">
-                <GoogleIcon fontSize="inherit" />
-              </IconButton>
-              <IconButton aria-label="delete" size="large" color="primary">
-                <FacebookIcon fontSize="inherit" />
-              </IconButton>
-            </Grid>
-          </Grid>
           <Grid
             container
             justifyContent="center"
@@ -201,7 +174,12 @@ const RegisterScreen = () => {
             <Typography variant="body2" component="span">
               ¿No tienes una cuenta? &nbsp;
             </Typography>
-            <Link href="login" variant="body2" color="secondary">
+            <Link
+              href="login"
+              variant="body2"
+              color="secondary"
+              sx={{ fontWeight: 500 }}
+            >
               Iniciar sesión
             </Link>
           </Grid>
