@@ -7,9 +7,6 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
-import { Marker, Popup } from "react-leaflet";
-import Logo from "../../assets/images/logo/fray-teal.png";
 import { Chip } from "@mui/material";
 
 import AudioPlayer from "material-ui-audio-player";
@@ -18,10 +15,24 @@ const src = [
   "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
   "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.wav",
 ];
+import { Marker, Popup } from "react-leaflet";
+import { useEffect } from "react";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+import { toast } from "react-toastify";
+import { firebaseApp } from "../../config/firebase";
+
+import Logo from "../../assets/images/logo/fray-teal.png";
 
 const Markers = (props) => {
-  const markers = props.places.map((place, i) => (
-    <Marker key={i} position={place.geometry} icon={props.icon}>
+   const storage = getStorage(firebaseApp);
+
+   useEffect(() => {
+      props.places.map(place => getDownloadURL(ref(storage, `audios/${place.audio}`))
+         .then(url => place.src = url)
+         .catch(error => toast.error(error?.message ?? "Something went wrong")));
+   }, [props.places, storage]);
+   return props.places.map((place, i) => (
+      <Marker key={i} position={place.geometry} icon={props.icon}>
       <Popup>
         <Box sx={{ m: 0, width: 200, maxWidth: 250, maxHeight: 300 }}>
           <CardMedia
@@ -96,9 +107,7 @@ const Markers = (props) => {
         </div>
       </Popup> */}
     </Marker>
-  ));
-
-  return markers;
-};
+   ))
+}
 
 export default Markers;

@@ -1,18 +1,18 @@
 import {
-  Button,
-  Container,
-  CssBaseline,
-  Divider,
-  Paper,
-  Typography,
+   Button,
+   Container,
+   CssBaseline,
+   Divider,
+   Paper,
+   Typography,
 } from "@mui/material";
 
 import MenuAppBar from "../components/MenuAppBar";
 
 import Jalisco from "../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jpg";
-import { blueGrey } from "@mui/material/colors";
+import {blueGrey} from "@mui/material/colors";
 import GutterlessList from "../components/GutterlessList";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const styles = {
   paperContainer: {
