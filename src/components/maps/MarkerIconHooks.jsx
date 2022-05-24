@@ -1,11 +1,17 @@
 import L from "leaflet";
 
-const MarkerIconHooks = (IconUrl) =>{
+/**
+ * @param {string} IconUrl
+ * @param {[]} iconanchor
+ * @param {[]} popupanchor
+ */
+const MarkerIconHooks = (IconUrl, iconanchor, popupanchor) =>{
     return L.icon({
         iconUrl: IconUrl,
         shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconSize: ['auto', 'auto'],
-        iconAnchor: [17, 46]
+        iconAnchor: iconanchor,
+        popupAnchor: popupanchor
     });
 }
 

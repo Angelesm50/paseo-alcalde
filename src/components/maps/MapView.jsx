@@ -6,8 +6,10 @@ import MakerUser from "./MakerUser";
 import Routing from "./Routing";
 
 const MapView = (props) => {
-  const icon = MarkerIconHooks(require('leaflet/dist/images/marker-icon.png'));
-  const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'))
+   //Para crear las propiedades del marker deseado
+  const icon = MarkerIconHooks(require('leaflet/dist/images/marker-icon.png'), [12, 41], [0, -41]);
+  const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'),[25, 50], [0, -50]);
+  const LatLng = {lat: props.latitude, lng: props.longitude};
 
   return (
     <MapContainer style={ { width: "100%", height: "300px", position: 'absolute', zIndex: 0 } }
@@ -19,7 +21,7 @@ const MapView = (props) => {
       />
       <Markers places={ props.places } icon={ icon }/>
       <MakerUser position={ [props.latitude, props.longitude] } icon={ iconUser }/>
-      { <Routing/> }
+      <Routing places={props.places} user={LatLng}/>
     </MapContainer>
   )
 
