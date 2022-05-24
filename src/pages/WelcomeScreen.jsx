@@ -5,7 +5,7 @@ import LogoApp from "../assets/images/logo/paseo-literario.png";
 import { Box, Container, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-import LocationPattern from "../assets/images/patterns/locations.png";
+import LocationPattern from "../assets/images/patterns/locations-teal-blue.png";
 
 const styles = {
   paperContainer: {

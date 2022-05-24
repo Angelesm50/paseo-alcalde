@@ -1,7 +1,7 @@
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import { Box } from "@mui/system";
@@ -12,13 +12,13 @@ const ABOUT_PASEO_ALCALDE = [
     secondary: "Propósito e historia de la aplicación",
   },
   {
-    primary: "Lugares del recorrido",
-    secondary: "Paradas disponibles en el recorrido",
+    primary: "Rutas del recorrido",
+    secondary: "Paradas disponibles en el trayecto",
   },
-  {
-    primary: "Ajustes del recorrido",
-    secondary: "Ajustes generales y del perfil",
-  },
+  // {
+  //   primary: "Ajustes del recorrido",
+  //   secondary: "Ajustes generales y del perfil",
+  // },
 ];
 
 export default function GutterlessList() {
@@ -29,8 +29,11 @@ export default function GutterlessList() {
           <ListItem
             disableGutters
             secondaryAction={
-              <IconButton aria-label="comment">
-                <ArrowForwardIosIcon />
+              <IconButton sx={{ color: "#b1d4cd" }} aria-label="item">
+                <ArrowForwardIosRoundedIcon
+                  sx={{ stroke: "#b1d4cd", strokeWidth: 2 }}
+                  fontSize="small"
+                />
               </IconButton>
             }
           >

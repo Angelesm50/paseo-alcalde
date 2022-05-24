@@ -53,8 +53,8 @@ const AppScreen = () => {
             variant="h5"
             component="div"
             gutterBottom
-            mt={5}
-            sx={{ color: blueGrey[400] }}
+            mt={8}
+            sx={{ color: blueGrey[400], fontWeight: 500 }}
           >
             Acerca de
           </Typography>
