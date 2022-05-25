@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 import { firebaseApp } from "../../config/firebase";
 
 import AudioPlayer from "material-ui-audio-player";
-import Logo from "../../assets/images/logo/fray-teal.png";
+import Logo from "../../assets/images/logo/teal/fray.png";
 
 const src = [
   "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",

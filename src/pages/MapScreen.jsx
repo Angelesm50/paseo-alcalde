@@ -10,17 +10,19 @@ import {
   MenuItem,
   Toolbar,
   Typography,
+  List,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 import MapView from "../components/maps/MapView";
-import { useEffect, useState } from "react";
-import { default as data } from "../assets/images/makers/murales.json";
-import { distance } from "../helpers/distance";
 import ListView from "../components/maps/ListView";
+import { useEffect, useState } from "react";
+import { distance } from "../helpers/distance";
 import { usePosition } from "../hooks/usePosition";
-import List from "@mui/material/List";
 import { auth } from "../config/firebase";
+
+import { default as data } from "../assets/images/makers/murales.json";
 
 const MapScreen = () => {
   const [anchorEl, setAnchorEl] = useState(null);
