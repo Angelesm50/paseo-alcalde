@@ -1,37 +1,26 @@
 import {
   Box,
   Button,
-  Chip,
   Container,
   CssBaseline,
-  IconButton,
   Link,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
   List,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import MapView from "../components/maps/MapView";
 import ListView from "../components/maps/ListView";
 import { useEffect, useState } from "react";
 import { distance } from "../helpers/distance";
 import { usePosition } from "../hooks/usePosition";
-import { auth } from "../config/firebase";
 
 import { default as data } from "../assets/images/makers/murales.json";
 
 const MapScreen = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [play, setPlay] = useState(false);
   const position = usePosition(true, { enableHighAccuracy: true });
-  const user = auth.currentUser;
-
-  const handleMenu = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
 
   useEffect(() => {
     const distanceInMeter = data.places.map((place) => ({
@@ -93,67 +82,23 @@ const MapScreen = () => {
         >
           <Box>
             <Typography component="h1" variant="h6">
-              {user.displayName}
+              Lugares del recorrido
             </Typography>
             <Typography
               component="span"
               variant="subtitle2"
-              sx={{ color: blueGrey[500] }}
+              sx={{ color: blueGrey[700] }}
             >
-              Mi primera ruta
+              Paseo Literario Fray Antonio Alcalde
             </Typography>
-          </Box>
-          <Box>
-            <Chip label="Editar ruta" variant="outlined" />
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              color="inherit"
-              onClick={handleMenu}
-            >
-              <MoreVertIcon sx={{ color: blueGrey[900] }} />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem>Opciones</MenuItem>
-              <MenuItem>Opciones</MenuItem>
-              <MenuItem>Opciones</MenuItem>
-              <MenuItem>Opciones</MenuItem>
-            </Menu>
           </Box>
         </Box>
       </Toolbar>
       <br />
       <hr />
-      <Box
-        sx={
-          {
-            // marginTop: 4,
-            // p: 0,
-            // width: "100%",
-            // height: 300,
-          }
-        }
-      >
-        <List>
-          <ListView places={data.places} />
-        </List>
-      </Box>
+      <List>
+        <ListView places={data.places} />
+      </List>
       <Container sx={{}}>
         <Link href={"app"}>
           <Button
@@ -161,8 +106,7 @@ const MapScreen = () => {
             variant="contained"
             size="large"
             color="primary"
-            style={{ marginTop: "25vh" }}
-            sx={{ mb: 3 }}
+            sx={{ my: 3 }}
           >
             Regresar
           </Button>

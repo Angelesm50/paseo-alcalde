@@ -27,10 +27,12 @@ const Markers = (props) => {
   const storage = getStorage(firebaseApp);
 
   useEffect(() => {
-    props.places.map((place) =>
-      getDownloadURL(ref(storage, `audios/${place.audio}`))
-        .then((url) => (place.src = url))
-        .catch((error) => toast.error(error?.message ?? "Something went wrong"))
+    props.places.map(
+      (place) =>
+        getDownloadURL(ref(storage, `audios/${place.audio}`)).then(
+          (url) => (place.src = url)
+        )
+      // .catch((error) => toast.error(error?.message ?? "Something went wrong"))
     );
   }, [props.places, storage]);
   return props.places.map((place, i) => (
