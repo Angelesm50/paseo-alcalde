@@ -11,10 +11,6 @@ import { Chip } from "@mui/material";
 
 import AudioPlayer from "material-ui-audio-player";
 
-const src = [
-  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.wav",
-];
 import { Marker, Popup } from "react-leaflet";
 import { useEffect } from "react";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
@@ -27,10 +23,15 @@ const Markers = (props) => {
    const storage = getStorage(firebaseApp);
 
    useEffect(() => {
-      props.places.map(place => getDownloadURL(ref(storage, `audios/${place.audio}`))
-         .then(url => place.src = url)
-         .catch(error => toast.error(error?.message ?? "Something went wrong")));
+      (async () => {
+         try {
+            await props.places.map(async place => place.src = await getDownloadURL(ref(storage, `audios/${place.audio}`)));
+         } catch (error) {
+            toast.error(error?.message ?? "Something went wrong");
+         }
+      })();
    }, [props.places, storage]);
+
    return props.places.map((place, i) => (
       <Marker key={i} position={place.geometry} icon={props.icon}>
       <Popup>
@@ -38,7 +39,7 @@ const Markers = (props) => {
           <CardMedia
             component="img"
             height="100px"
-            image={Logo}
+            image={place.url}
             alt={place.name}
           />
           <CardContent sx={{ p: 0, mb: 1, alignSelf: "center" }}>
@@ -53,7 +54,7 @@ const Markers = (props) => {
               preload="auto"
               time="single"
               timePosition="end"
-              src={src}
+              src={place.src}
             />
           </CardContent>
           <CardActions sx={{ p: 0, justifyContent: "space-between" }}>

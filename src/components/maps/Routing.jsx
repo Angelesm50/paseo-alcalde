@@ -6,12 +6,12 @@ import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 
 const createRoutineMachineLayer = (props) => {
    const places = props.places.map(place => L.latLng(place.geometry[0], place.geometry[1]));
-   console.log(places);
 
    return L.Routing.control({
+      router: L.Routing.mapbox('pk.eyJ1IjoicGFzZW9saSIsImEiOiJjbDNqdG85ZWgwNW51M2NyczFydnBxcTM2In0.xa0eSLCzShN4-fd4M2-mtQ'),
       show: false,
       waypoints: places,
-      routeWhileDragging: true,
+      routeWhileDragging: false,
       lineOptions: {
          styles: [
             {

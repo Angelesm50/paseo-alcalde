@@ -1,16 +1,4 @@
-import {
-   Box,
-   Button,
-   Chip,
-   Container,
-   CssBaseline,
-   IconButton,
-   Link,
-   Menu,
-   MenuItem,
-   Toolbar,
-   Typography,
-} from "@mui/material";
+import {Box, Button, Chip, Container, CssBaseline, IconButton, Link, Menu, MenuItem, Toolbar, Typography,} from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
@@ -21,6 +9,7 @@ import ListView from "../components/maps/ListView";
 import {usePosition} from "../hooks/usePosition";
 import List from "@mui/material/List";
 import {auth} from "../config/firebase";
+import { useRef } from 'react'
 
 const MapScreen = () => {
    const [anchorEl, setAnchorEl] = useState(null);
@@ -28,20 +17,19 @@ const MapScreen = () => {
    const position = usePosition(true, {enableHighAccuracy: true});
    const user = auth.currentUser;
 
-
    const handleMenu = (event) => setAnchorEl(event.currentTarget);
    const handleClose = () => setAnchorEl(null);
 
    useEffect(() => {
       const distanceInMeter = data.places.map(place => ({
          name: place.name,
-         audio: place.audio,
+         geometry: place.geometry,
          distance: distance(place.geometry[0], place.geometry[1], position.lat, position.lng, "K") * 1000
       }));
       const place = distanceInMeter.find(place => place.distance >= 0 && place.distance <= 5);
 
       if (place && !play) {
-         alert(`¡Estás cerca de ${place.name}!`);
+         alert(`¡Estás cerca de ${place.name}`);
          setPlay(true);
       }
       if (!place && play) {

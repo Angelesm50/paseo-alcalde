@@ -44,6 +44,15 @@
       ],
       "description": "Texto de ejemplo aqui",
       "audio": "audio-test-5"
+    },
+    {
+      "name": "",
+      "autor": "",
+      "geometry": [0,0],
+      "description": "",
+      "audio": "",
+      "photo": "",
+      "type": ""
     }
   ]
 }

@@ -3,7 +3,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import {Box} from "@mui/system";
 
-import Dialog from '../Dialog';
+import Dialog from '../Dialog/DialogList';
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {toast} from "react-toastify";
 import {useEffect} from "react";
@@ -27,6 +27,7 @@ const ListView = ({places}) => {
       <div>
          <Box key={i}>
             <ListItem
+               key={i}
                secondaryAction={
                   <Dialog description={place.description} name={place.name} image={place.url}>
                   </Dialog>}>

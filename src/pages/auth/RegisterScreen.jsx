@@ -1,17 +1,13 @@
-import GoogleIcon from "@mui/icons-material/Google";
-import FacebookIcon from "@mui/icons-material/Facebook";
 import {
   Button,
   Checkbox,
   Container,
   CssBaseline,
-  Divider,
   FormControl,
   FormControlLabel,
   FormGroup,
   FormHelperText,
   Grid,
-  IconButton,
   Input,
   InputLabel,
   Link,
@@ -172,7 +168,7 @@ const RegisterScreen = () => {
             variant="body2"
           >
             <Typography variant="body2" component="span">
-              ¿No tienes una cuenta? &nbsp;
+              ¿Tienes una cuenta? &nbsp;
             </Typography>
             <Link
               href="login"
