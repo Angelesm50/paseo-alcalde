@@ -1,14 +1,14 @@
 {
-  "short_name": "Paseo Alcalde",
-  "name": "Recorrido Paseo Alcalde",
-  "description": "Aplicación de geolocalización para el recorrido de Paseo Alcalde",
+  "short_name": "Paseo Literario",
+  "name": "Recorrido del Paseo Literario Fray Antonio Alcalde",
+  "description": "Aplicación para el recorrido del Paseo Literario Fray Antonio Alcalde usando geolocalización",
   "start_url": ".",
   "scope": "/",
   "lang": "es-MX",
   "display": "fullscreen",
   "orientation": "portrait",
-  "theme_color": "#353F5F",
-  "background_color": "#F4F5F8",
+  "theme_color": "#006D81",
+  "background_color": "#F4F4F8",
   "icons": [
     {
       "src": "logo192.png",
@@ -23,13 +23,13 @@
       "purpose": "maskable"
     },
     {
-      "src": "logo192.png",
+      "src": "logo512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "logo192.png",
+      "src": "logo512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"

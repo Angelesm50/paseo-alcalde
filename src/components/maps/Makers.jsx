@@ -9,30 +9,34 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Chip } from "@mui/material";
 
-import AudioPlayer from "material-ui-audio-player";
-
-const src = [
-  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.wav",
-];
 import { Marker, Popup } from "react-leaflet";
 import { useEffect } from "react";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { toast } from "react-toastify";
 import { firebaseApp } from "../../config/firebase";
 
-import Logo from "../../assets/images/logo/fray-teal.png";
+import AudioPlayer from "material-ui-audio-player";
+import Logo from "../../assets/images/logo/teal/fray.png";
+
+const src = [
+  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+  "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.wav",
+];
 
 const Markers = (props) => {
-   const storage = getStorage(firebaseApp);
+  const storage = getStorage(firebaseApp);
 
-   useEffect(() => {
-      props.places.map(place => getDownloadURL(ref(storage, `audios/${place.audio}`))
-         .then(url => place.src = url)
-         .catch(error => toast.error(error?.message ?? "Something went wrong")));
-   }, [props.places, storage]);
-   return props.places.map((place, i) => (
-      <Marker key={i} position={place.geometry} icon={props.icon}>
+  useEffect(() => {
+    props.places.map(
+      (place) =>
+        getDownloadURL(ref(storage, `audios/${place.audio}`)).then(
+          (url) => (place.src = url)
+        )
+      // .catch((error) => toast.error(error?.message ?? "Something went wrong"))
+    );
+  }, [props.places, storage]);
+  return props.places.map((place, i) => (
+    <Marker key={i} position={place.geometry} icon={props.icon}>
       <Popup>
         <Box sx={{ m: 0, width: 200, maxWidth: 250, maxHeight: 300 }}>
           <CardMedia
@@ -107,7 +111,7 @@ const Markers = (props) => {
         </div>
       </Popup> */}
     </Marker>
-   ))
-}
+  ));
+};
 
 export default Markers;

@@ -22,7 +22,7 @@ export const googleLogin = () => {
       })
       .catch((error) => {
         // toast.error(firebaseErrors[error.message] || error.message);
-        console.log(error);
+        // console.log(error);
       });
   };
 };

@@ -21,7 +21,7 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../../assets/images/logo/fray-teal.png";
+import Logo from "../../assets/images/logo/teal/fray.png";
 import {
   googleLogin,
   emailAndPasswordLogin,
@@ -58,7 +58,7 @@ const LoginScreen = () => {
   const handleEmailAndPasswordLogin = (e) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    console.log(data.entries());
+    // console.log(data.entries());
     const email = data.get("email");
     const password = data.get("password");
     if (email.trim() === "" || !email.trim().includes("@")) {
@@ -101,7 +101,7 @@ const LoginScreen = () => {
               name="email"
               autoComplete="off"
               onChange={handleChange}
-              value={userData.fullname}
+              value={userData.email}
             />
           </FormControl>
           <FormControl fullWidth margin="normal" variant="standard">
@@ -109,7 +109,7 @@ const LoginScreen = () => {
             <Input
               required
               onChange={handleChange}
-              value={userData.fullname}
+              value={userData.password}
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"

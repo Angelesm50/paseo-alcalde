@@ -21,7 +21,7 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Logo from "../../assets/images/logo/fray-teal.png";
+import Logo from "../../assets/images/logo/teal/fray.png";
 import { register } from "../../services/actions/authAction";
 import titleize from "underscore.string/titleize";
 

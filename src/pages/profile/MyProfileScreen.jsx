@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import ProfilePicture from "../../assets/images/icons/default-profile-picture-tree.png";
+import BackgroundProfile from "../../assets/images/icons/background-profile.png";
 
 const styles = {
   paperContainer: {
@@ -24,7 +24,7 @@ const styles = {
     borderRadius: 0,
     filter: "blur(3px)",
     background: "rgba(32, 41, 69, 0.2)",
-    backgroundImage: `linear-gradient(180deg, rgba(32, 41, 69, 0.5), rgba(32, 41, 69, 0.5)), url(${ProfilePicture})`,
+    backgroundImage: `linear-gradient(180deg, rgba(32, 41, 69, 0.5), rgba(32, 41, 69, 0.5)), url(${BackgroundProfile})`,
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundColor: "#cccccc",
@@ -73,7 +73,7 @@ const MyProfile = () => {
           }}
           component="img"
           alt="Foto de perfil"
-          src={ProfilePicture}
+          src={BackgroundProfile}
         />
         <Typography component="h5" variant="h5" sx={{ mt: 3, color: "white" }}>
           Error

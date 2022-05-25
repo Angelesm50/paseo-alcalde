@@ -18,7 +18,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { resetPassword } from "../../services/actions/authAction";
-import Logo from "../../assets/images/logo/blue/paseo-alcalde.png";
+import Logo from "../../assets/images/logo/teal/fray.png";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
