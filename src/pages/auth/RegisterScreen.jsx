@@ -21,7 +21,7 @@ import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Logo from "../../assets/images/logo/blue/paseo-alcalde.png";
+import Logo from "../../assets/images/logo/fray-teal.png";
 import { register } from "../../services/actions/authAction";
 import titleize from "underscore.string/titleize";
 
@@ -73,7 +73,7 @@ const RegisterScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="30" height="30" />
+        <img src={Logo} alt="Logo" height="40" />
         <Typography component="h1" variant="h6">
           Registro
         </Typography>
@@ -174,7 +174,12 @@ const RegisterScreen = () => {
             <Typography variant="body2" component="span">
               ¿No tienes una cuenta? &nbsp;
             </Typography>
-            <Link href="login" variant="body2" color="secondary">
+            <Link
+              href="login"
+              variant="body2"
+              color="secondary"
+              sx={{ fontWeight: 500 }}
+            >
               Iniciar sesión
             </Link>
           </Grid>

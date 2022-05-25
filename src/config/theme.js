@@ -26,13 +26,14 @@ const theme = responsiveFontSizes(
     // },
     palette: {
       background: {
-        default: "#F4F5F8", //gray
+        // default: "#F4F5F8", //gray
+        default: "#F4F4F8", //ghost white
       },
       primary: {
-        main: "#202945", //indigo
+        main: "#006d82", // teal blue
       },
       secondary: {
-        main: "#FF8C40", //orange
+        main: "#F5907C", //orange
       },
       error: {
         main: "#D72A2A", //red
@@ -50,6 +51,10 @@ const theme = responsiveFontSizes(
         primary: "#000000", //black
         // secondary: "#FFFFFF", //white
       },
+      action: {
+        disabledBackground: '#92bfc9',
+        disabled: '#FFFFFF'
+      },
     },
     components: {
       MuiButton: {
@@ -57,6 +62,7 @@ const theme = responsiveFontSizes(
           root: {
             borderRadius: 28,
             textTransform: "capitalize",
+            fontSize: 15,
           },
         },
       },

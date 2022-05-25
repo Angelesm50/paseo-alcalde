@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import { Box } from "@mui/system";
@@ -14,8 +14,8 @@ const ABOUT_PASEO_ALCALDE = [
     url: "what",
   },
   {
-    primary: "Rutas del trayecto",
-    secondary: "Paradas disponibles en el recorrido",
+    primary: "Rutas del recorrido",
+    secondary: "Paradas disponibles en el trayecto",
     url: "places",
   },
   {
@@ -28,6 +28,10 @@ const ABOUT_PASEO_ALCALDE = [
     secondary: "Equipo de trabajo",
     url: "configuration",
   },
+  // {
+  //   primary: "Ajustes del recorrido",
+  //   secondary: "Ajustes generales y del perfil",
+  // },
 ];
 
 export default function GutterlessList() {
@@ -39,8 +43,11 @@ export default function GutterlessList() {
           <ListItem
             disableGutters
             secondaryAction={
-              <IconButton aria-label="comment">
-                <ArrowForwardIosIcon />
+              <IconButton sx={{ color: "#b1d4cd" }} aria-label="item">
+                <ArrowForwardIosRoundedIcon
+                  sx={{ stroke: "#b1d4cd", strokeWidth: 2 }}
+                  fontSize="small"
+                />
               </IconButton>
             }
           >

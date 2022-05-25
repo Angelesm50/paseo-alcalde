@@ -21,7 +21,7 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../../assets/images/logo/blue/paseo-alcalde.png";
+import Logo from "../../assets/images/logo/fray-teal.png";
 import {
   googleLogin,
   emailAndPasswordLogin,
@@ -82,7 +82,7 @@ const LoginScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="30" height="30" />
+        <img src={Logo} alt="Logo" height="40" />
         <Typography component="h1" variant="h6">
           Bienvenido
         </Typography>
@@ -126,9 +126,13 @@ const LoginScreen = () => {
               }
             />
           </FormControl>
-          <Grid container justifyContent="flex-end" sx={{ mt: 3, mb: 3 }}>
+          <Grid container justifyContent="flex-end" sx={{ mt: 2 }}>
             <Link href="forgot-password" variant="body2" color="secondary">
-              <Typography variant="body2" component="span">
+              <Typography
+                variant="body2"
+                component="span"
+                sx={{ fontWeight: 500 }}
+              >
                 ¿Olvidaste tú contraseña?
               </Typography>
             </Link>
@@ -139,7 +143,7 @@ const LoginScreen = () => {
             variant="contained"
             size="large"
             color="primary"
-            sx={{ mt: 3, mb: 5 }}
+            sx={{ mt: 5, mb: 5 }}
             disabled={!userData.email || !userData.password}
           >
             Iniciar Sesión
@@ -179,7 +183,12 @@ const LoginScreen = () => {
             <Typography variant="body2" component="span">
               ¿No tienes una cuenta? &nbsp;
             </Typography>
-            <Link href="register" variant="body2" color="secondary">
+            <Link
+              href="register"
+              variant="body2"
+              color="secondary"
+              sx={{ fontWeight: 500 }}
+            >
               Registrate
             </Link>
           </Grid>
