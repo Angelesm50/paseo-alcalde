@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 
 import { logout } from "../services/actions/authAction";
 import { clean } from "../services/actions/nominaAction";
-import Logo from "../assets/images/logo/fray-gray.png";
+import Logo from "../assets/images/logo/white/fray.png";
 
 const MenuAppBar = () => {
   const dispatch = useDispatch();

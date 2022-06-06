@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-import LogoApp from "../assets/images/logo/paseo-literario.png";
+import LogoApp from "../assets/images/logo/white/paseo-literario.png";
 import { Box, Container, Paper } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 

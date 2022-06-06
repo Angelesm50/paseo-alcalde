@@ -17,6 +17,7 @@ import ResetPasswordScreen from "../pages/auth/ResetPasswordScreen";
 
 import { useAuth } from "../services/auth/AuthContext";
 import MyProfile from "../pages/profile/MyProfileScreen";
+import PlaceScreen from "../pages/PlaceScreen";
 
 const AppRouter = () => {
   const { currentUser } = useAuth();
@@ -41,6 +42,7 @@ const AppRouter = () => {
             />
             <Route path="/app" element={<AppScreen />} />
             <Route path="/map" element={<MapScreen />} />
+            <Route path="/places" element={<PlaceScreen />} />
             <Route path="/my-profile" element={<MyProfile />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
