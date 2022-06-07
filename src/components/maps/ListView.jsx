@@ -2,8 +2,8 @@ import {ListItem} from "@mui/material";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import {Box} from "@mui/system";
+import ScrollDialog from "../Dialog/DialogList";
 
-import Dialog from '../Dialog';
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
 import {toast} from "react-toastify";
 import {useEffect} from "react";
@@ -28,8 +28,8 @@ const ListView = ({places}) => {
          <Box key={i}>
             <ListItem
                secondaryAction={
-                  <Dialog description={place.description} name={place.name} image={place.url}>
-                  </Dialog>}>
+                  <ScrollDialog description={place.description} name={place.name} image={place.url}>
+                  </ScrollDialog>}>
                <ListItemText
                   primary={`${place.name}`}
                   secondary={`${place.autor}`}

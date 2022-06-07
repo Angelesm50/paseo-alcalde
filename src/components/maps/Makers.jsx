@@ -17,7 +17,7 @@ import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { toast } from "react-toastify";
 import { firebaseApp } from "../../config/firebase";
 
-import Logo from "../../assets/images/logo/fray-teal.png";
+// import Logo from "../../assets/images/logo/fray-teal.png";
 
 const Markers = (props) => {
    const storage = getStorage(firebaseApp);
@@ -33,7 +33,7 @@ const Markers = (props) => {
    }, [props.places, storage]);
 
    return props.places.map((place, i) => (
-      <Marker key={i} position={place.geometry} icon={props.icon}>
+      <Marker key={i} position={place.geometry} icon={props.icon} id={i}>
       <Popup>
         <Box sx={{ m: 0, width: 200, maxWidth: 250, maxHeight: 300 }}>
           <CardMedia
