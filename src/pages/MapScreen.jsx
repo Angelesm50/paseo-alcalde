@@ -2,40 +2,25 @@ import {Box, Button, Chip, Container, CssBaseline, IconButton, Link, Menu, MenuI
 import { blueGrey } from "@mui/material/colors";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {default as data} from "../assets/images/makers/murales.json";
-import {distance} from "../helpers/distance";
 import ListView from "../components/maps/ListView";
-import {usePosition} from "../hooks/usePosition";
 import List from "@mui/material/List";
 import {auth} from "../config/firebase";
-import { useRef } from 'react'
 
 const MapScreen = () => {
    const [anchorEl, setAnchorEl] = useState(null);
-   const [play, setPlay] = useState(false);
-   const position = usePosition(true, {enableHighAccuracy: true});
    const user = auth.currentUser;
 
    const handleMenu = (event) => setAnchorEl(event.currentTarget);
    const handleClose = () => setAnchorEl(null);
-
-   useEffect(() => {
-      const distanceInMeter = data.places.map(place => ({
-         name: place.name,
-         geometry: place.geometry,
-         distance: distance(place.geometry[0], place.geometry[1], position.lat, position.lng, "K") * 1000
-      }));
-      const place = distanceInMeter.find(place => place.distance >= 0 && place.distance <= 5);
-
-      if (place && !play) {
-         alert(`¡Estás cerca de ${place.name}`);
-         setPlay(true);
-      }
-      if (!place && play) {
-         setPlay(false);
-      }
-   }, [play, position])
+   const toTitleCase = (phrase) => {
+      return phrase
+         .toLowerCase()
+         .split(' ')
+         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+         .join(' ');
+   };
 
    return (
       <>
@@ -53,7 +38,7 @@ const MapScreen = () => {
                color: "white",
             }}
          >
-            <MapView places={data.places} latitude={position.lat} longitude={position.lng}/>
+            <MapView places={data.places}/>
          </Box>
          <Toolbar>
             <Box
@@ -66,7 +51,7 @@ const MapScreen = () => {
             >
                <Box>
                   <Typography component="h1" variant="h6">
-                     {user.displayName}
+                     {toTitleCase(user.displayName)}
                   </Typography>
                   <Typography
                      component="span"

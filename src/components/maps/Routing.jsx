@@ -11,8 +11,11 @@ const createRoutineMachineLayer = (props) => {
       router: L.Routing.mapbox('pk.eyJ1IjoicGFzZW9saSIsImEiOiJjbDNqdG85ZWgwNW51M2NyczFydnBxcTM2In0.xa0eSLCzShN4-fd4M2-mtQ'),
       show: false,
       waypoints: places,
+      fitSelectedRoutes: true,
+      draggableWaypoints: false,
       routeWhileDragging: false,
       lineOptions: {
+         addWaypoints: false,
          styles: [
             {
                color: 'blue',

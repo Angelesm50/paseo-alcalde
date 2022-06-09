@@ -1,8 +1,8 @@
 import {
-   Box, Button, Container, CssBaseline, Grid, IconButton, Link, List, ListItem, ListItemText, Typography,
+   Box, Button, Container, CssBaseline, Grid, Link, List, ListItem, ListItemText, Typography,
 } from "@mui/material";
 import {blueGrey} from "@mui/material/colors";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+// import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ProfilePicture from "../../assets/images/icons/background-profile.png";
 import {auth} from "../../config/firebase";
 import DialogUser from "../../components/Dialog/DialogUser"

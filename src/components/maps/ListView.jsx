@@ -27,6 +27,7 @@ const ListView = ({places}) => {
       <div>
          <Box key={i}>
             <ListItem
+               key={i}
                secondaryAction={
                   <ScrollDialog description={place.description} name={place.name} image={place.url}>
                   </ScrollDialog>}>
