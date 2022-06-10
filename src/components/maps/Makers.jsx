@@ -36,7 +36,7 @@ const Markers = forwardRef(({ icon, places }, forwardedRef) => {
   useImperativeHandle(forwardedRef, () => ({
 
     flyTo(lat, lng, placeId) {
-      map.flyTo([lat, lng], 16);
+      map.flyTo([lat+0.00734, lng], 15);
       makersRef.current[placeId].openPopup();
     }
 
@@ -44,7 +44,7 @@ const Markers = forwardRef(({ icon, places }, forwardedRef) => {
 
   return places.map((place, i) => (
     <Marker key={ i } position={ place.geometry } icon={ icon } id={ place.id } ref={el => makersRef.current[place.id] = el}
-            eventHandlers={ { click: (e) => map.flyTo(e.latlng, 16)} }>
+            eventHandlers={ { click: (e) => map.flyTo(e.latlng+0.00534, 16)} }>
       <Popup>
         <Box sx={ { m: 0, width: 200, maxWidth: 250, maxHeight: 300 } }>
           <CardMedia
