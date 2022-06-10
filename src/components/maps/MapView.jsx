@@ -15,8 +15,9 @@ const {BaseLayer} = LayersControl;
 
 const MapView = ({ places }) => {
    const childMarkersRef = useRef();
-   const icon = MarkerIconHooks(require('leaflet/dist/images/marker-icon.png'), [12, 41], [0, -41]);
+   const icon = MarkerIconHooks(require('../../assets/images/makers/mural.png'), [25, 50], [0, -50]);
    const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'), [25, 50], [0, -50]);
+   const iconMoney = MarkerIconHooks(require('../../assets/images/makers/money.png'), [24, 49], [0, -49]);
    const [play, setPlay] = useState(false);
    const position = usePosition(true, {enableHighAccuracy: true});
 
@@ -55,7 +56,7 @@ const MapView = ({ places }) => {
             </BaseLayer>
          </LayersControl>
          <ZoomControl position="bottomright"/>
-         <Markers ref={childMarkersRef} places={places} icon={icon} />
+         <Markers ref={childMarkersRef} places={places} icon={icon} iconMoney={iconMoney} />
          <MakerUser position={position} icon={iconUser}/>
          <Routing places={places} user={position}/>
       </MapContainer>

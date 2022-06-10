@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
 import { firebaseApp } from "../../config/firebase";
 import { useMap } from "react-leaflet/hooks";
 
-const Markers = forwardRef(({ icon, places }, forwardedRef) => {
+const Markers = forwardRef(({ icon, iconMoney, places }, forwardedRef) => {
   const storage = getStorage(firebaseApp);
   const map = useMap();
   const makersRef = useRef({});
@@ -43,7 +43,7 @@ const Markers = forwardRef(({ icon, places }, forwardedRef) => {
   }));
 
   return places.map((place, i) => (
-    <Marker key={ i } position={ place.geometry } icon={ icon } id={ place.id } ref={el => makersRef.current[place.id] = el}
+    <Marker key={ i } position={ place.geometry } icon={ place.type === "gastronomica" ? iconMoney : icon } id={ place.id } ref={el => makersRef.current[place.id] = el}
             eventHandlers={ { click: (e) => map.flyTo(e.latlng+0.00534, 16)} }>
       <Popup>
         <Box sx={ { m: 0, width: 200, maxWidth: 250, maxHeight: 300 } }>
