@@ -12,76 +12,87 @@ import { Chip } from "@mui/material";
 import AudioPlayer from "material-ui-audio-player";
 
 import { Marker, Popup } from "react-leaflet";
-import { useEffect } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { toast } from "react-toastify";
 import { firebaseApp } from "../../config/firebase";
+import { useMap } from "react-leaflet/hooks";
 
-// import Logo from "../../assets/images/logo/fray-teal.png";
+const Markers = forwardRef(({ icon, places }, forwardedRef) => {
+  const storage = getStorage(firebaseApp);
+  const map = useMap();
+  const makersRef = useRef({});
 
-const Markers = (props) => {
-   const storage = getStorage(firebaseApp);
+  useEffect(() => {
+    (async () => {
+      try {
+        await places.map(async place => place.src = await getDownloadURL(ref(storage, `audios/${ place.audio }`)));
+      } catch (error) {
+        toast.error(error?.message ?? "Something went wrong");
+      }
+    })();
+  }, [places]);
 
-   useEffect(() => {
-      (async () => {
-         try {
-            await props.places.map(async place => place.src = await getDownloadURL(ref(storage, `audios/${place.audio}`)));
-         } catch (error) {
-            toast.error(error?.message ?? "Something went wrong");
-         }
-      })();
-   }, [props.places, storage]);
+  useImperativeHandle(forwardedRef, () => ({
 
-   return props.places.map((place, i) => (
-      <Marker key={i} position={place.geometry} icon={props.icon} id={i}>
+    flyTo(lat, lng, placeId) {
+      map.flyTo([lat, lng], 16);
+      makersRef.current[placeId].openPopup();
+    }
+
+  }));
+
+  return places.map((place, i) => (
+    <Marker key={ i } position={ place.geometry } icon={ icon } id={ place.id } ref={el => makersRef.current[place.id] = el}
+            eventHandlers={ { click: (e) => map.flyTo(e.latlng, 16)} }>
       <Popup>
-        <Box sx={{ m: 0, width: 200, maxWidth: 250, maxHeight: 300 }}>
+        <Box sx={ { m: 0, width: 200, maxWidth: 250, maxHeight: 300 } }>
           <CardMedia
             component="img"
             height="100px"
-            image={place.url}
-            alt={place.name}
+            image={ place.url }
+            alt={ place.name }
           />
-          <CardContent sx={{ p: 0, mb: 1, alignSelf: "center" }}>
-            <Typography gutterBottom component="h6" sx={{ fontWeight: 500 }}>
-              {place.name}
+          <CardContent sx={ { p: 0, mb: 1, alignSelf: "center" } }>
+            <Typography gutterBottom component="h6" sx={ { fontWeight: 500 } }>
+              { place.name }
             </Typography>
             <AudioPlayer
               width="200px"
-              elevation={0}
+              elevation={ 0 }
               variation="primary"
-              spacing={1}
+              spacing={ 1 }
               preload="auto"
               time="single"
               timePosition="end"
-              src={place.src}
+              src={ place.src }
             />
           </CardContent>
-          <CardActions sx={{ p: 0, justifyContent: "space-between" }}>
+          <CardActions sx={ { p: 0, justifyContent: "space-between" } }>
             <Chip
               color="primary"
               label="2 min"
               variant="outlined"
-              sx={{ height: 24, pl: 0.3, mr: 1 }}
+              sx={ { height: 24, pl: 0.3, mr: 1 } }
               icon={
                 <DirectionsWalkRoundedIcon
-                  sx={{ fontSize: "small", py: 0.4 }}
+                  sx={ { fontSize: "small", py: 0.4 } }
                 />
               }
             />
             <Button
               variant="contained"
               size="small"
-              sx={{
+              sx={ {
                 fontSize: "small",
                 p: 0.1,
                 px: 1,
                 "& .MuiButton-startIcon": { marginRight: "4px" },
-              }}
+              } }
               startIcon={
                 <PlayArrowRoundedIcon
-                  style={{ marginRight: 0 }}
-                  sx={{ fontSize: "small", transform: "rotate(270deg)" }}
+                  style={ { marginRight: 0 } }
+                  sx={ { fontSize: "small", transform: "rotate(270deg)" } }
                 />
               }
             >
@@ -90,25 +101,8 @@ const Markers = (props) => {
           </CardActions>
         </Box>
       </Popup>
-      {/* <Popup>
-        <div>
-          <h4>{place.name}</h4>
-          <hr />
-          <div>
-            <p>{place.description}</p>
-          </div>
-          <div>
-            <img
-              width={"100%"}
-              height={"100%"}
-              src="https://static.vecteezy.com/system/resources/previews/004/615/716/large_2x/play-pause-media-icon-round-buttons-free-vector.jpg"
-              alt="Iglesia"
-            />
-          </div>
-        </div>
-      </Popup> */}
     </Marker>
-   ))
-}
+  ))
+});
 
 export default Markers;

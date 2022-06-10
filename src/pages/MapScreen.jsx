@@ -14,13 +14,12 @@ const MapScreen = () => {
 
    const handleMenu = (event) => setAnchorEl(event.currentTarget);
    const handleClose = () => setAnchorEl(null);
-   const toTitleCase = (phrase) => {
-      return phrase
-         .toLowerCase()
-         .split(' ')
-         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-         .join(' ');
-   };
+   const toTitleCase = (phrase) =>
+     phrase
+       .toLowerCase()
+       .split(' ')
+       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+       .join(' ');
 
    return (
       <>

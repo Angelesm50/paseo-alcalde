@@ -24,8 +24,8 @@ const ListView = ({places}) => {
    }, [places, storage]);
 
    return places.map((place, i) => (
-      <div>
-         <Box key={i}>
+      <div key={i}>
+         <Box>
             <ListItem
                key={i}
                secondaryAction={
