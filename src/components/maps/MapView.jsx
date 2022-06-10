@@ -39,7 +39,7 @@ const MapView = ({ places }) => {
    }, [play, position, places])
 
    return (
-      <MapContainer style={{width: "100%", height: "60vh", position: 'absolute', zIndex: 0}}
+      <MapContainer style={{width: "100%", height: "60vh", position: 'absolute', zIndex: 0, color: "black"}}
                     center={[20.689010732827306, -103.34976874964553]}
                     fullscreenControl={true}
                     zoomControl={false}

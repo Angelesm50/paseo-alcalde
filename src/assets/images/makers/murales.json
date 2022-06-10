@@ -5,7 +5,7 @@
       "autor": "Gabriel Flores",
       "geometry": [20.694291517483144, -103.34947267918776],
       "description": "La composición de este mural parece sugerir realizar una lectura desde la parte central hacia los extremos. En el extremo derecho se observa una figura masculina desnuda en tonos fríos que lleva su mano izquierda hacia la cabeza; en el extremo derecho, un grupo de hombres desnudos sobre un fondo en llamas se dirigen ensimismados hacia un aparato metálico, uno de ellos porta una antorcha. Todos parecen dirigirse al centro del mural donde se encuentran tres personajes principales. El de la derecha está rodeado por círculos en movimiento y los brazos abiertos, su brazo derecho dirige la mirada hacia el centro donde vemos el personaje principal que da una estructura compositiva al cuadro en forma de una gran pirámide, representa el estudio y por medio de este al progreso. En el extremo izquierdo se percibe la única figura vestida como ser mitológico griego, haciendo alusión a la filosofía.",
-      "audio": "laFilosofiaYCiencia.mp3",
+      "audio": "filosofiayciencia.mpeg",
       "photo": "laFilosofiaYCiencia.jpeg",
       "type": "mural",
       "id":  1
@@ -15,18 +15,18 @@
       "autor": "José Chávez Morado",
       "geometry": [20.695231577738046, -103.347313773431],
       "description": "José Chávez Morado pertenece a la tercera generación del muralismo conformada por Juan O’Gorman, Raúl Anguiano y Alfredo Zalce. Esta última representada por la figura central sobredimensionada del pintor jalisciense José Clemente Orozco, quien se erige como guía de un movimiento que a través del arte contribuye, junto con maestros y estudiantes, a erigir un mejor país.",
-      "audio": "evolucionDeLaEduacion.mp3",
+      "audio": "evolucioneduacion.mpeg",
       "photo": "evolucionDeLaEduacion.png",
       "type": "mural",
       "id":  2
 
     },
     {
-      "name": "Sucesos o Denuncia sociopolítica ante el abuso de poder",
+      "name": "Nuestra Civilizacion",
       "autor": "Gabriel Flores",
       "geometry": [20.684486024242254, -103.34667862470029],
       "description": "Gabriel Flores fue ayudante de David A. Siqueiros y Juan O’Gorman en la Ciudad de México de quienes aprendió las técnicas de mural. Más en los murales del edificio SEMS, hay un distanciamiento de estos. En estos murales predominan los colores oscuros y opacos, tonalidades grises y amarillentas, ciudades incendiadas o abandonadas, personajes ensimismados o dolientes cargados de una intensidad emocional para representar el fracaso a dónde se dirige la humanidad deshumanizada y esclavista. No hay dramatismo en sus personajes, sino tristeza y dolor reflejada en niños, jóvenes y adultos.",
-      "audio": "",
+      "audio": "nuestracivilizacion.mpeg",
       "photo": "nuestracivilizacion.jpeg",
       "type": "mural",
       "id":  3
@@ -36,7 +36,7 @@
       "autor": "Fray Antonio Alcalde",
       "geometry": [20.68367561185225, -103.3473249613791],
       "description": "El Barrio del Santuario enaltece a su fundador, Fray Antonio Alcalde y Barriga, obispo y benefactor indiscutible de Guadalajara, quien a finales del siglo XVIII promovió la construcción del Santuario de Nuestra Señora de Guadalupe, donde aún se celebra con vigor y devoción a la Virgen cada 12 de diciembre. Alcalde concibió en torno al Santuario un proyecto integral de ayuda a los desamparados. Los habitantes del barrio comparten el recuerdo de sucesos, vivencias familiares y paseos al Parque Alcalde. En el Mercado Alcalde, el colorido de frutas y verduras convive con escamochas, gorditas, birria, menudo y guisados con sabor a casa.",
-      "audio": "",
+      "audio": "barriodelsantuario.mpeg",
       "photo": "barriodelsantuario.jpg",
       "type": "gastronomica",
       "id":  4
@@ -46,17 +46,17 @@
       "autor": "Carlos Orozco Romero",
       "geometry": [20.6782855959395, -103.34659737472614],
       "description": "Es uno de los primeros murales realizados en Guadalajara por un pintor tapatío, el destacado pintor Carlos Orozco Romero en el marco del movimiento muralista mexicano iniciado en la década de los veinte del siglo pasado. Es notorio el tratamiento formal y técnico, ya que conjuga la vanguardia europea en la esquematización de la figura humana y el contenido simbólico del mural. Cuatro de ellos miran directamente al espectador mientras algunos parecen realizar alguna artesanía típica de la zona; una mujer con los brazos cruzados sobre su vientre divide el espacio pictórico en dos, y al fondo se aprecia el Cerro de la Reina, sitio simbólico y mitológico para los tonaltecas",
-      "audio": "alfarerosTonaltecas.mp3",
+      "audio": "alfarerosTonaltecas.mpeg",
       "photo": "alfarerosTonaltecas.jpeg",
       "type": "mural",
       "id":  5
     },
     {
-      "name": "Murales de Gabriel Flores La conquista material",
+      "name": "La conquista material",
       "autor": "Gabriel Flores",
       "geometry": [20.677875212118234, -103.34778035158236],
       "description": "Francisco Aceves señala que hasta 1970, la pintura mural de Gabriel Flores está dentro de las peculiaridades del muralismo mexicano que se nutre de la historia y de las tradiciones vernáculas que arrancan desde la época precolombina y en el vigor con que se expresan los problemas humanos, sean estos económicos, políticos, religiosos. La sección del mural que aborda el tema de la fundación de Guadalajara representa el momento en que entran los españoles triunfantes portando escudos, armas y la cruz cristiana que sobresale, ante un grupo de indígenas semidesnudos derrotados y humillados, como si se tratase de un ángel caído que ha luchado todo lo que ha podido, pero la supremacía bélica representada en el cañón, la armadura y el caballo los ha derrotado.",
-      "audio": "",
+      "audio": "conquistamaterial.mpeg",
       "photo": "conquistamaterial.jpeg",
       "type": "mural",
       "id":  6
@@ -66,7 +66,7 @@
       "autor": "José Guadalupe Zuno",
       "geometry": [20.677804918121886, -103.34656001175657],
       "description": "El mural representa el momento brutal de la confrontación bélica entre grupos indígenas y la armada española. Un perro rabioso a punto de ser arrojado sobre sus víctimas, la participación de pueblos indígenas apoyando al conquistador, la fiereza y valentía de los indígenas que defendieron su tierra, la clara supremacía bélica por parte de los españoles antes las flechas, y armas elaboradas manualmente.",
-      "audio": "laConquistaDeLaNuevaGalicia.mp3",
+      "audio": "conquistanuevagalicia.mpeg",
       "photo": "laConquistaDeLaNuevaGalicia.jpeg",
       "type": "mural",
       "id":  7
@@ -76,7 +76,7 @@
       "autor": "José Clemente Orozco",
       "geometry": [20.676196621815116, -103.34650619720783],
       "description": "La figura principal, Miguel Hidalgo, alza una antorcha incendiada en su mano derecha y empuña la mano izquierda en señal de fuerza y coraje, parece liderar al pueblo que lucha enfurecido y muere atravesado por filosas armas.",
-      "audio": "",
+      "audio": "idenpendencianacional.mpeg",
       "photo": "Laindependencianacional.jpeg",
       "type": "mural",
       "id":  9
@@ -86,7 +86,7 @@
       "autor": "Amado de la Cueva y David Alfaro Siqueiros",
       "geometry": [20.676102792532504, -103.34857699199782],
       "description": "Debido a sus dimensiones, esta obra en su conjunto, es considerada el segundo gran proyecto muralista de la ciudad de Guadalajara. En este mural predomina el dibujo sobre el color, limitado a tonos ocres y sienas más el negro, empleado para delimitar formas y sugerir planos, lo que confiere una profunda sensación de armonía y equilibrio. Una familia campesina carga los símbolos de la opresión, un militar, una iglesia y el símbolo de la democracia, con balanza y gorro frigio.",
-      "audio": "idealesAgrariosYLaboristas.mp3",
+      "audio": "idealesagrariosyarbolistas.mpeg",
       "photo": "idealesAgrariosYLaboristas.jpeg",
       "type": "mural",
       "id":  9
@@ -96,7 +96,7 @@
       "autor": "Fray Antonio Alcalde",
       "geometry": [20.670691920679904, -103.34848797698284],
       "description": "Con ello, se facilitó el comercio desde el Camino Real de Colima y era un punto de llegada de arrieros con sus mercancías, un lugar donde pequeños manantiales formaron caprichosamente las Nueve Esquinas. Muy cerca de las Nueve Esquinas, las inmediaciones del Templo de San Francisco y la Capilla de Nuestra Señora de Aranzazú narran la vocación religiosa de Guadalajara y la transformación de su vida cotidiana con la llegada del ferrocarril y los hoteles. En el trayecto hacia las Plazas de Armas y Guadalajara, en el corazón de la urbe, no faltan los antojitos, postres y bebidas para satisfacer al paladar.",
-      "audio": "",
+      "audio": "nueveesquinas.mpeg",
       "photo": "nueveesquinas.jpeg",
       "type": "gastronomica",
       "id":  10
