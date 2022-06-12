@@ -18,11 +18,11 @@ const ABOUT_PASEO_ALCALDE = [
     secondary: "Paradas disponibles en el trayecto",
     url: "places",
   },
-  {
-    primary: "Ajustes del recorrido",
-    secondary: "Ajustes generales y del perfil",
-    url: "configuration",
-  },
+  // {
+  //   primary: "Ajustes del recorrido",
+  //   secondary: "Ajustes generales y del perfil",
+  //   url: "configuration",
+  // },
   // {
   //   primary: "Involucrados en el proyecto",
   //   secondary: "Equipo de trabajo",
