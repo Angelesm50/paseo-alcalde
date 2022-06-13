@@ -43,9 +43,9 @@ export default function GutterlessList() {
           <ListItem
             disableGutters
             secondaryAction={
-              <IconButton sx={{ color: "#b1d4cd" }} aria-label="item">
+              <IconButton sx={{ color: "#84AEC2" }} aria-label="item">
                 <ArrowForwardIosRoundedIcon
-                  sx={{ stroke: "#b1d4cd", strokeWidth: 2 }}
+                  sx={{ stroke: "#84AEC2", strokeWidth: 2 }}
                   fontSize="small"
                 />
               </IconButton>
