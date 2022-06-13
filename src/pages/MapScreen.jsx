@@ -1,53 +1,20 @@
 import {
   Box,
   Button,
+  Chip,
   Container,
   CssBaseline,
   Link,
   Toolbar,
   Typography,
-  List,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-
 import MapView from "../components/maps/MapView";
-import ListView from "../components/maps/ListView";
-import { useEffect, useState } from "react";
-import { distance } from "../helpers/distance";
-import { usePosition } from "../hooks/usePosition";
-
 import { default as data } from "../assets/images/makers/murales.json";
+import ListView from "../components/maps/ListView";
+import List from "@mui/material/List";
 
 const MapScreen = () => {
-  const [play, setPlay] = useState(false);
-  const position = usePosition(true, { enableHighAccuracy: true });
-
-  useEffect(() => {
-    const distanceInMeter = data.places.map((place) => ({
-      name: place.name,
-      audio: place.audio,
-      distance:
-        distance(
-          place.geometry[0],
-          place.geometry[1],
-          position.lat,
-          position.lng,
-          "K"
-        ) * 1000,
-    }));
-    const place = distanceInMeter.find(
-      (place) => place.distance >= 0 && place.distance <= 5
-    );
-
-    if (place && !play) {
-      alert(`¡Estás cerca de ${place.name}!`);
-      setPlay(true);
-    }
-    if (!place && play) {
-      setPlay(false);
-    }
-  }, [play, position]);
-
   return (
     <>
       <CssBaseline />
@@ -65,11 +32,7 @@ const MapScreen = () => {
           color: "white",
         }}
       >
-        <MapView
-          places={data.places}
-          latitude={position.lat}
-          longitude={position.lng}
-        />
+        <MapView places={data.places} />
       </Box>
       <Toolbar>
         <Box
@@ -81,24 +44,63 @@ const MapScreen = () => {
           }}
         >
           <Box>
-            <Typography component="h1" variant="h6">
+            <Typography
+              component="h1"
+              variant="h6"
+              sx={{ color: blueGrey[800], fontWeight: 500 }}
+            >
+              {/* {toTitleCase(user.displayName)} */}
               Lugares del recorrido
             </Typography>
-            <Typography
+            {/* <Typography
               component="span"
               variant="subtitle2"
-              sx={{ color: blueGrey[700] }}
+              sx={{ color: blueGrey[500] }}
             >
-              Paseo Literario Fray Antonio Alcalde
-            </Typography>
+              Lugares del recorrido
+            </Typography> */}
+          </Box>
+          <Box>
+            <Chip label="Editar ruta" variant="outlined" color="secondary" />
+            {/* <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              color="inherit"
+              onClick={handleMenu}
+            >
+              <MoreVertIcon sx={{ color: blueGrey[900] }} />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem>Opciones</MenuItem>
+              <MenuItem>Opciones</MenuItem>
+              <MenuItem>Opciones</MenuItem>
+              <MenuItem>Opciones</MenuItem>
+            </Menu> */}
           </Box>
         </Box>
       </Toolbar>
-      <br />
       <hr />
-      <List>
-        <ListView places={data.places} />
-      </List>
+      <Box>
+        <List>
+          <ListView places={data.places} />
+        </List>
+      </Box>
       <Container sx={{}}>
         <Link href={"app"}>
           <Button

@@ -10,7 +10,7 @@ import LocationPattern from "../assets/images/patterns/locations-teal-blue.png";
 const styles = {
   paperContainer: {
     background: "#202945",
-    backgroundImage: `linear-gradient(180deg, rgba(0, 109, 130, 1) 35%, rgba(177, 212, 205, 0.82) 95%), url(${LocationPattern})`,
+    backgroundImage: `linear-gradient(180deg, rgba(97, 151, 178, 1) 35%, rgba(187, 219, 208, 0.82) 95%), url(${LocationPattern})`,
     width: "100%",
     height: "100vh",
     backgroundSize: "cover",

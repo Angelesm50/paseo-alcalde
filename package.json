@@ -1,5 +1,6 @@
 {
-  "name": "10-redux-firebse",
+  "homepage": "https://Angelesm50.github.io/paseo-alcalde",
+  "name": "paseo-alcalde",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,14 +19,16 @@
     "firebase": "^9.7.0",
     "i18next": "^21.6.16",
     "leaflet": "^1.8.0",
-    "material-ui-audio-player": "^1.7.1",
+    "leaflet-fullscreen": "^1.0.2",
     "leaflet-routing-machine": "^3.2.12",
     "lrm-google": "1.0.1",
+    "material-ui-audio-player": "^1.7.1",
     "react": "^18.1.0",
     "react-audio-player": "^0.17.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^11.16.7",
     "react-leaflet": "^4.0.0",
+    "react-leaflet-google-layer": "^2.0.6",
     "react-leaflet-routing-machine": "^0.0.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.2",
@@ -49,6 +52,8 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

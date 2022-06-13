@@ -168,7 +168,7 @@ const RegisterScreen = () => {
             variant="body2"
           >
             <Typography variant="body2" component="span">
-              ¿No tienes una cuenta? &nbsp;
+              ¿Tienes una cuenta? &nbsp;
             </Typography>
             <Link
               href="login"

@@ -27,13 +27,13 @@ const theme = responsiveFontSizes(
     palette: {
       background: {
         // default: "#F4F5F8", //gray
-        default: "#F4F4F8", //ghost white
+        default: "#F4F5FF", //ghost white
       },
       primary: {
-        main: "#006d82", // teal blue
+        main: "#6197B2", // air superiority blue
       },
       secondary: {
-        main: "#F5907C", //orange
+        main: "#E57E93", // pink
       },
       error: {
         main: "#D72A2A", //red
