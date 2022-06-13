@@ -4,35 +4,17 @@ import {
   Chip,
   Container,
   CssBaseline,
-  IconButton,
   Link,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
-import { useState } from "react";
 import { default as data } from "../assets/images/makers/murales.json";
 import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
-import { auth } from "../config/firebase";
 
 const MapScreen = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const user = auth.currentUser;
-
-  const handleMenu = (event) => setAnchorEl(event.currentTarget);
-  const handleClose = () => setAnchorEl(null);
-  const toTitleCase = (phrase) =>
-    phrase
-      .toLowerCase()
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-
   return (
     <>
       <CssBaseline />
