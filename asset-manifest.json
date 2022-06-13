@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/paseo-alcalde/static/css/main.4b27962c.css",
+    "main.js": "/paseo-alcalde/static/js/main.8f890814.js",
+    "static/js/922.a10dedc4.chunk.js": "/paseo-alcalde/static/js/922.a10dedc4.chunk.js",
+    "static/media/jalisco-a-sus-hijos-esclarecidos.jpg": "/paseo-alcalde/static/media/jalisco-a-sus-hijos-esclarecidos.1745a24c66258a4cfcd5.jpg",
+    "static/media/locations-teal-blue.png": "/paseo-alcalde/static/media/locations-teal-blue.25240a0a03f38423e9c2.png",
+    "static/media/background-profile.png": "/paseo-alcalde/static/media/background-profile.cb1bcc2620c5cedc2136.png",
+    "static/media/lock.png": "/paseo-alcalde/static/media/lock.771c7b45ed17ffcc3457.png",
+    "static/media/fray.png": "/paseo-alcalde/static/media/fray.37838772d781be55864c.png",
+    "static/media/paseo-literario.png": "/paseo-alcalde/static/media/paseo-literario.4bf017cd102a48b189b0.png",
+    "service-worker.js": "/paseo-alcalde/service-worker.js",
+    "index.html": "/paseo-alcalde/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.4b27962c.css",
+    "static/js/main.8f890814.js"
+  ]
+}
