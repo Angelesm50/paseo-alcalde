@@ -6,6 +6,7 @@
   "scope": "/",
   "lang": "es-MX",
   "display": "fullscreen",
+  "build": "react-scripts build && cp build/index.html build/404.html",
   "orientation": "portrait",
   "theme_color": "#006D81",
   "background_color": "#F4F4F8",
