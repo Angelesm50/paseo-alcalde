@@ -47,6 +47,7 @@ export default function GutterlessList() {
                 <ArrowForwardIosRoundedIcon
                   sx={{ stroke: "#b1d4cd", strokeWidth: 2 }}
                   fontSize="small"
+                  onClick={() => navigate(`/${item.url}`)}
                 />
               </IconButton>
             }

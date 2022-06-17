@@ -109,14 +109,15 @@ const MyProfile = () => {
                      ))}
                   </List>
                </Grid>
-               <Container sx={{}}>
+               <Container>
                   <Link href={'app'}>
                      <Button
+                        sx={{display: "flex", alignItems: "flex-end", justifyContent: "center",}}
                         fullWidth
                         variant="contained"
                         size="large"
                         color="primary"
-                        style={{marginTop: "25vh"}}
+                        style={{marginTop: "auto"}}
                         sx={{mb: 3}}
                      >
                         Regresar

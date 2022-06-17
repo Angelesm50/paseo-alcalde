@@ -5,7 +5,6 @@ import {Box} from "@mui/system";
 import ScrollDialog from "../Dialog/DialogList";
 
 import {getDownloadURL, getStorage, ref} from "firebase/storage";
-import {toast} from "react-toastify";
 import {useEffect} from "react";
 import {firebaseApp} from "../../config/firebase";
 
@@ -16,12 +15,17 @@ const ListView = ({places}) => {
    useEffect(() => {
       (async () => {
          try {
-            await places.map(async place => place.url = await getDownloadURL(ref(storage, `fotos/${place.photo}`)));
+            await places.map(
+               async (place) =>
+                  (place.url = await getDownloadURL(
+                     ref(storage, `fotos/${place.photo}`)
+                  ))
+            );
          } catch (error) {
-            toast.error(error?.message ?? "Something went wrong");
+            // toast.error(error?.message ?? "Something went wrong");
          }
       })();
-   }, [places, storage]);
+   }, [places]);
 
    return places.map((place, i) => (
       <div key={i}>
