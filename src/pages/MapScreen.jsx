@@ -59,17 +59,17 @@ const MapScreen = () => {
                         {/* {toTitleCase(user.displayName)} */}
                         Lugares del recorrido
                      </Typography>
-                     <Typography
+                     {/*<Typography
                         component="span"
                         variant="subtitle2"
                         sx={{color: blueGrey[500]}}
                      >
                         Mi primera ruta
-                     </Typography>
+                     </Typography>*/}
                   </Box>
                   <Box>
-                     <Chip label="Editar ruta" variant="outlined"/>
-                     <IconButton
+                     <Chip label="Editar ruta" variant="outlined" color="secondary"/>
+                     {/*<IconButton
                         size="large"
                         aria-label="account of current user"
                         aria-controls="menu-appbar"
@@ -79,27 +79,26 @@ const MapScreen = () => {
                      >
                         <MoreVertIcon sx={{color: blueGrey[900]}}/>
                      </IconButton>
-                     <Menu
+                        <Menu
                         id="menu-appbar"
                         anchorEl={anchorEl}
                         anchorOrigin={{
-                           vertical: "top",
-                           horizontal: "right",
-                        }}
+                        vertical: "top",
+                        horizontal: "right",
+                     }}
                         keepMounted
                         transformOrigin={{
-                           vertical: "top",
-                           horizontal: "right",
-                        }}
+                        vertical: "top",
+                        horizontal: "right",
+                     }}
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
-                     >
+                        >
                         <MenuItem>Opciones</MenuItem>
-                     </Menu>
+                        </Menu>*/}
                   </Box>
                </Box>
             </Toolbar>
-            <br/>
             <hr/>
             <Box>
                <List>
@@ -113,8 +112,7 @@ const MapScreen = () => {
                      variant="contained"
                      size="large"
                      color="primary"
-                     style={{marginTop: "5vh"}}
-                     sx={{mb: 3}}
+                     sx={{ my: 3 }}
                   >
                      Regresar
                   </Button>
