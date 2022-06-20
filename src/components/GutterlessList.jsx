@@ -18,11 +18,11 @@ const ABOUT_PASEO_ALCALDE = [
     secondary: "Paradas disponibles en el trayecto",
     url: "places",
   },
-  {
-    primary: "Ajustes del recorrido",
-    secondary: "Ajustes generales y del perfil",
-    url: "configuration",
-  },
+  // {
+  //   primary: "Ajustes del recorrido",
+  //   secondary: "Ajustes generales y del perfil",
+  //   url: "configuration",
+  // },
   // {
   //   primary: "Involucrados en el proyecto",
   //   secondary: "Equipo de trabajo",
@@ -43,11 +43,10 @@ export default function GutterlessList() {
           <ListItem
             disableGutters
             secondaryAction={
-              <IconButton sx={{ color: "#b1d4cd" }} aria-label="item">
+              <IconButton sx={{ color: "#84AEC2" }} aria-label="item">
                 <ArrowForwardIosRoundedIcon
-                  sx={{ stroke: "#b1d4cd", strokeWidth: 2 }}
+                  sx={{ stroke: "#84AEC2", strokeWidth: 2 }}
                   fontSize="small"
-                  onClick={() => navigate(`/${item.url}`)}
                 />
               </IconButton>
             }
