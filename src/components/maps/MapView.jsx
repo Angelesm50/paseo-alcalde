@@ -46,7 +46,7 @@ const MapView = ({ places }) => {
                     zoomControl={false}
                     zoom={16}>
          <LayersControl>
-            <BaseLayer checked name="Satelite">
+            <BaseLayer name="Satelite">
                <ReactLeafletGoogleLayer type={'satellite'} />
             </BaseLayer>
             <BaseLayer checked name="Mapa">

@@ -8,7 +8,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import IconButton from "@mui/material/IconButton";
 
-export default function ScrollDialog({description, name, image}) {
+export default function ScrollDialog({place}) {
    const [open, setOpen] = useState(false);
    const descriptionElementRef = useRef(null);
 
@@ -41,11 +41,11 @@ export default function ScrollDialog({description, name, image}) {
             aria-labelledby="scroll-dialog-title"
             aria-describedby="scroll-dialog-description"
          >
-            <DialogTitle id="scroll-dialog-title">{name}</DialogTitle>
+            <DialogTitle id="scroll-dialog-title">{place.name}</DialogTitle>
             <DialogContent dividers={true}>
                <DialogContentText id="scroll-dialog-description" ref={descriptionElementRef} tabIndex={-1}>
-                  <img src={image} alt={name} style={{width: "100%", height: "100%"}}/>
-                  {description}
+                  <img src={place.url} alt={place.name} style={{width: "100%", height: "100%"}}/>
+                  {place.description}
                </DialogContentText>
             </DialogContent>
             <DialogActions>

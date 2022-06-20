@@ -6,7 +6,9 @@ import {useState} from "react";
 import {default as data} from "../assets/images/makers/murales.json";
 import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
-import {auth} from "../config/firebase";
+import {auth, firebaseApp} from "../config/firebase";
+import {getDownloadURL, getStorage, ref} from "firebase/storage";
+import {useEffect} from "react";
 
 const MapScreen = () => {
    const [anchorEl, setAnchorEl] = useState(null);
@@ -87,9 +89,6 @@ const MapScreen = () => {
                      open={Boolean(anchorEl)}
                      onClose={handleClose}
                   >
-                     <MenuItem>Opciones</MenuItem>
-                     <MenuItem>Opciones</MenuItem>
-                     <MenuItem>Opciones</MenuItem>
                      <MenuItem>Opciones</MenuItem>
                   </Menu>
                </Box>

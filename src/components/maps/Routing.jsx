@@ -10,6 +10,8 @@ const createRoutineMachineLayer = (props) => {
    return L.Routing.control({
       router: L.Routing.mapbox('pk.eyJ1IjoicGFzZW9saSIsImEiOiJjbDNqdG85ZWgwNW51M2NyczFydnBxcTM2In0.xa0eSLCzShN4-fd4M2-mtQ'),
       show: false,
+      hide: true,
+      collapsible: false,
       waypoints: places,
       fitSelectedRoutes: true,
       draggableWaypoints: false,
