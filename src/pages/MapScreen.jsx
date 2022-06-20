@@ -41,86 +41,86 @@ const MapScreen = () => {
          >
             <MapView places={data.places}/>
          </Box>
-         <Toolbar>
-            <Box
-               sx={{
-                  height: 30,
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "space-between",
-               }}
-            >
-               <Box>
-                  <Typography component="h1" variant="h6">
-                     {toTitleCase(user.displayName)}
-                  </Typography>
-                  <Typography
-                     component="span"
-                     variant="subtitle2"
-                     sx={{color: blueGrey[500]}}
-                  >
-                     Mi primera ruta
-                  </Typography>
-               </Box>
-               <Box>
-                  <Chip label="Editar ruta" variant="outlined"/>
-                  <IconButton
-                     size="large"
-                     aria-label="account of current user"
-                     aria-controls="menu-appbar"
-                     aria-haspopup="true"
-                     color="inherit"
-                     onClick={handleMenu}
-                  >
-                     <MoreVertIcon sx={{color: blueGrey[900]}}/>
-                  </IconButton>
-                  <Menu
-                     id="menu-appbar"
-                     anchorEl={anchorEl}
-                     anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                     }}
-                     keepMounted
-                     transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                     }}
-                     open={Boolean(anchorEl)}
-                     onClose={handleClose}
-                  >
-                     <MenuItem>Opciones</MenuItem>
-                  </Menu>
-               </Box>
-            </Box>
-         </Toolbar>
-         <br/>
-         <hr/>
-         <Box sx={{
-            // marginTop: 4,
-            // p: 0,
-            // width: "100%",
-            // height: 300,
-
-         }}>
-            <List>
-               <ListView places={data.places}/>
-            </List>
-         </Box>
-         <Container sx={{}}>
-            <Link href={'app'}>
-               <Button
-                  fullWidth
-                  variant="contained"
-                  size="large"
-                  color="primary"
-                  style={{marginTop: "25vh"}}
-                  sx={{mb: 3}}
+         <Box sx={{height: "40vh", overflow: "hidden", overflowY: "scroll"}}>
+            <Toolbar>
+               <Box
+                  sx={{
+                     height: 30,
+                     width: "100%",
+                     display: "flex",
+                     justifyContent: "space-between",
+                  }}
                >
-                  Regresar
-               </Button>
-            </Link>
-         </Container>
+                  <Box>
+                     <Typography
+                        component="h1"
+                        variant="h6"
+                        sx={{ color: blueGrey[800], fontWeight: 500 }}>
+                        {/* {toTitleCase(user.displayName)} */}
+                        Lugares del recorrido
+                     </Typography>
+                     <Typography
+                        component="span"
+                        variant="subtitle2"
+                        sx={{color: blueGrey[500]}}
+                     >
+                        Mi primera ruta
+                     </Typography>
+                  </Box>
+                  <Box>
+                     <Chip label="Editar ruta" variant="outlined"/>
+                     <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        color="inherit"
+                        onClick={handleMenu}
+                     >
+                        <MoreVertIcon sx={{color: blueGrey[900]}}/>
+                     </IconButton>
+                     <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorEl}
+                        anchorOrigin={{
+                           vertical: "top",
+                           horizontal: "right",
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                           vertical: "top",
+                           horizontal: "right",
+                        }}
+                        open={Boolean(anchorEl)}
+                        onClose={handleClose}
+                     >
+                        <MenuItem>Opciones</MenuItem>
+                     </Menu>
+                  </Box>
+               </Box>
+            </Toolbar>
+            <br/>
+            <hr/>
+            <Box>
+               <List>
+                  <ListView places={data.places}/>
+               </List>
+            </Box>
+            <Container sx={{}}>
+               <Link href={'app'}>
+                  <Button
+                     fullWidth
+                     variant="contained"
+                     size="large"
+                     color="primary"
+                     style={{marginTop: "5vh"}}
+                     sx={{mb: 3}}
+                  >
+                     Regresar
+                  </Button>
+               </Link>
+            </Container>
+         </Box>
       </>
    );
 };
