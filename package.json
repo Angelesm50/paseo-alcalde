@@ -81,5 +81,8 @@
     "@babel/preset-react": "^7.16.7",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.5"
+  },
+  "resolutions": {
+    "autoprefixer": "10.4.5"
   }
 }
