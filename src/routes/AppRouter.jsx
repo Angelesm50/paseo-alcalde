@@ -42,8 +42,8 @@ const AppRouter = () => {
             />
             <Route path="/app" element={<AppScreen />} />
             <Route path="/map" element={<MapScreen />} />
-            <Route path="/places" element={<PlaceScreen />} />
-            <Route path="/my-profile" element={<MyProfile />} />
+            <Route path="/tours" element={<PlaceScreen />} />
+            <Route path="/settings" element={<MyProfile />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
