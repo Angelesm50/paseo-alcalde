@@ -85,7 +85,7 @@ export default function FormDialog({ type, text }) {
         updateProfile(user, { displayName: titleize(datos.name) })
           .then(() => {
             toast.success("Nombre cambiado");
-            window.location.reload(false);
+            handleClose();
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
@@ -99,7 +99,7 @@ export default function FormDialog({ type, text }) {
         updateEmail(user, datos.email)
           .then(() => {
             toast.success("Email cambiado");
-            window.location.reload(false);
+            handleClose();
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
@@ -113,7 +113,7 @@ export default function FormDialog({ type, text }) {
         updatePassword(user, datos.password)
           .then(() => {
             toast.success("Contraseña cambiada");
-            window.location.reload(false);
+            handleClose();
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
