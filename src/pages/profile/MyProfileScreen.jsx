@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Container,
@@ -10,10 +11,11 @@ import {
   Typography,
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import ProfilePicture from "../../assets/images/icons/background-profile.png";
+import { useNavigate } from "react-router-dom";
+
 import { auth } from "../../config/firebase";
 import DialogUser from "../../components/Dialog/DialogUser";
-import { useNavigate } from "react-router-dom";
+import ProfilePicture from "../../assets/images/icons/background-profile.png";
 
 const styles = {
   paperContainer: {
@@ -51,6 +53,7 @@ const OPTIONS = [
 const MyProfile = () => {
   const navigate = useNavigate();
   const user = auth.currentUser;
+
   return (
     <Container component="main" maxWidth="xs">
       <Box component="div" style={styles.paperContainer} />
@@ -63,16 +66,10 @@ const MyProfile = () => {
         }}
         style={sectionStyle}
       >
-        <Box
-          sx={{
-            marginTop: 8,
-            height: 150,
-            width: 150,
-            borderRadius: "50%",
-          }}
-          component="img"
-          alt="Foto de perfil"
+        <Avatar
+          alt={user.displayName ? user.displayName : "Usuario"}
           src={user.photoURL ? user.photoURL : ProfilePicture}
+          sx={{ width: 150, height: 150, marginTop: 8 }}
         />
         <Typography
           component="h5"

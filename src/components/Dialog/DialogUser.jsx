@@ -17,20 +17,22 @@ import {
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { logout } from "../../services/actions/authAction";
-import { clean } from "../../services/actions/nominaAction";
 import titleize from "underscore.string/titleize";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+
+import { logout } from "../../services/actions/authAction";
+import { clean } from "../../services/actions/nominaAction";
 
 export default function FormDialog({ type, text }) {
   const auth = getAuth();
   const user = auth.currentUser;
 
   const [datos, setDatos] = useState({
-    name: "",
-    email: "",
+    name: `${user.displayName}`,
+    email: `${user.email}`,
     password: "",
   });
+
   const [open, setOpen] = useState(false);
   const [values, setValues] = useState({
     amount: "",
@@ -64,7 +66,6 @@ export default function FormDialog({ type, text }) {
   };
 
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     setDatos({
       ...datos,
       [e.target.name]: e.target.value,
@@ -84,8 +85,8 @@ export default function FormDialog({ type, text }) {
       if (datos.name.trim().length > 2) {
         updateProfile(user, { displayName: titleize(datos.name) })
           .then(() => {
-            toast.success("Nombre cambiado");
             handleClose();
+            toast.success("Nombre cambiado");
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
@@ -98,8 +99,8 @@ export default function FormDialog({ type, text }) {
       if (datos.email.trim() !== "" || datos.email.trim().includes("@")) {
         updateEmail(user, datos.email)
           .then(() => {
-            toast.success("Email cambiado");
             handleClose();
+            toast.success("Email cambiado");
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
@@ -112,8 +113,8 @@ export default function FormDialog({ type, text }) {
       if (datos.password.trim().length >= 8) {
         updatePassword(user, datos.password)
           .then(() => {
-            toast.success("Contraseña cambiada");
             handleClose();
+            toast.success("Contraseña cambiada");
           })
           .catch((error) => {
             toast.error(error?.message ?? "Algo salió mal");
@@ -136,6 +137,7 @@ export default function FormDialog({ type, text }) {
         <Input
           id="password"
           name="password"
+          autoComplete="off"
           type={values.showPassword ? "text" : "password"}
           value={values.password}
           onChange={handleChange("password")}
