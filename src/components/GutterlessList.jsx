@@ -12,7 +12,7 @@ const ABOUT_PASEO_ALCALDE = [
   {
     primary: "¿Qué es paseo Alcalde?",
     secondary: "Propósito e historia de la aplicación",
-    url: "what-is-paseo-alcalde",
+    url: "about",
   },
   {
     primary: "Recorridos",
