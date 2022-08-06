@@ -27,7 +27,7 @@ const ABOUT_PASEO_ALCALDE = [
   {
     primary: "Involucrados en el proyecto",
     secondary: "Equipo de trabajo",
-    url: "Involved-in-the-project",
+    url: "team",
   },
 ];
 

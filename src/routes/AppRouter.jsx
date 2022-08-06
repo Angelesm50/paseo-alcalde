@@ -19,6 +19,7 @@ import { useAuth } from "../services/auth/AuthContext";
 import MyProfile from "../pages/profile/MyProfileScreen";
 import PlaceScreen from "../pages/PlaceScreen";
 import WhatIsAlcaldeScreen from "../pages/about/WhatIsAlcaldeScreen";
+import TeamScreen from "../pages/team/TeamScreen";
 
 const AppRouter = () => {
   const { currentUser } = useAuth();
@@ -46,6 +47,7 @@ const AppRouter = () => {
             <Route path="/about" element={<WhatIsAlcaldeScreen />} />
             <Route path="/tours" element={<PlaceScreen />} />
             <Route path="/settings" element={<MyProfile />} />
+            <Route path="/team" element={<TeamScreen />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Button,
@@ -14,7 +13,7 @@ const WhatIsAlcaldeScreen = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Container component="main" maxWidth="xs" sx={{ mt: 3 }}>
+      <Container component="main" sx={{ mt: 3 }}>
         <CssBaseline />
         <Typography
           variant="h2"
@@ -34,10 +33,7 @@ const WhatIsAlcaldeScreen = () => {
           </Typography>
           ?
         </Typography>
-        <Box
-          sx={{ display: "flex", justifyContent: "center", mb: 2 }}
-          maxWidth="xs"
-        >
+        <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
           <Divider
             sx={{
               width: "7rem",
@@ -79,7 +75,7 @@ const WhatIsAlcaldeScreen = () => {
           variant="contained"
           size="large"
           color="primary"
-          sx={{ my: 3 }}
+          sx={{ my: 5, width: "200px" }}
           onClick={() => navigate("app")}
         >
           Regresar
