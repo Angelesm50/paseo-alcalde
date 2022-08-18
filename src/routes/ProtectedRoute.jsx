@@ -14,12 +14,16 @@ export default function ProtectedRoute(props) {
   ];
 
   if (paths.includes(pathname)) {
-    return currentUser
-      ? (<Navigate to={ state?.from ?? "/app" }/>)
-      : (<Outlet { ...props } />);
+    return currentUser ? (
+      <Navigate to={state?.from ?? "/app"} />
+    ) : (
+      <Outlet {...props} />
+    );
   }
 
-  return currentUser
-    ? (<Outlet { ...props } />)
-    : (<Navigate to="/login" state={ { from: pathname } }/>);
+  return currentUser ? (
+    <Outlet {...props} />
+  ) : (
+    <Navigate to="/welcome" state={{ from: pathname }} />
+  );
 }

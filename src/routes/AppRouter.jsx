@@ -7,7 +7,7 @@ import {
 
 import ProtectedRoute from "./ProtectedRoute";
 
-import MapPage from "../pages/MapPage";
+import MapScreen from "../pages/MapScreen";
 import AppScreen from "../pages/AppScreen";
 import WelcomeScreen from "../pages/WelcomeScreen";
 import LoginScreen from "../pages/auth/LoginScreen";
@@ -18,6 +18,8 @@ import ResetPasswordScreen from "../pages/auth/ResetPasswordScreen";
 import { useAuth } from "../services/auth/AuthContext";
 import MyProfile from "../pages/profile/MyProfileScreen";
 import PlaceScreen from "../pages/PlaceScreen";
+import WhatIsAlcaldeScreen from "../pages/about/WhatIsAlcaldeScreen";
+import TeamScreen from "../pages/team/TeamScreen";
 
 const AppRouter = () => {
   const { currentUser } = useAuth();
@@ -41,9 +43,11 @@ const AppRouter = () => {
               element={<ResetPasswordScreen />}
             />
             <Route path="/app" element={<AppScreen />} />
-            <Route path="/map" element={<MapPage />} />
-            <Route path="/places" element={<PlaceScreen />} />
-            <Route path="/my-profile" element={<MyProfile />} />
+            <Route path="/map" element={<MapScreen />} />
+            <Route path="/about" element={<WhatIsAlcaldeScreen />} />
+            <Route path="/tours" element={<PlaceScreen />} />
+            <Route path="/settings" element={<MyProfile />} />
+            <Route path="/team" element={<TeamScreen />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

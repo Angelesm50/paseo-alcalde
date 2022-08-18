@@ -1,18 +1,17 @@
 import {
-   Button,
-   Container,
-   CssBaseline,
-   Divider,
-   Paper,
-   Typography,
+  Button,
+  Container,
+  CssBaseline,
+  Divider,
+  Paper,
+  Typography,
 } from "@mui/material";
+import { blueGrey } from "@mui/material/colors";
+import { useNavigate } from "react-router-dom";
 
 import MenuAppBar from "../components/MenuAppBar";
-
-import Jalisco from "../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jpg";
-import {blueGrey} from "@mui/material/colors";
 import GutterlessList from "../components/GutterlessList";
-import {useNavigate} from "react-router-dom";
+import Jalisco from "../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jpg";
 
 const styles = {
   paperContainer: {
@@ -29,7 +28,6 @@ const styles = {
 
 const AppScreen = () => {
   const navigate = useNavigate();
-
   return (
     <>
       <Paper elevation={0} style={styles.paperContainer}>
@@ -53,8 +51,8 @@ const AppScreen = () => {
             variant="h5"
             component="div"
             gutterBottom
-            mt={8}
-            sx={{ color: blueGrey[400], fontWeight: 500 }}
+            mt={7}
+            sx={{ color: blueGrey[800], fontWeight: 600 }}
           >
             Acerca de
           </Typography>
