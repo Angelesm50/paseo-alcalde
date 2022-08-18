@@ -50,6 +50,7 @@ export default function GutterlessList() {
                 />
               </IconButton>
             }
+            onClick={() => navigate(`/${item.url}`)}
           >
             <ListItemText
               primary={`${item.primary}`}

@@ -7,7 +7,7 @@ import {
 
 import ProtectedRoute from "./ProtectedRoute";
 
-import MapScreen from "../pages/MapScreen";
+import MapPage from "../pages/MapPage";
 import AppScreen from "../pages/AppScreen";
 import WelcomeScreen from "../pages/WelcomeScreen";
 import LoginScreen from "../pages/auth/LoginScreen";
@@ -41,7 +41,7 @@ const AppRouter = () => {
               element={<ResetPasswordScreen />}
             />
             <Route path="/app" element={<AppScreen />} />
-            <Route path="/map" element={<MapScreen />} />
+            <Route path="/map" element={<MapPage />} />
             <Route path="/places" element={<PlaceScreen />} />
             <Route path="/my-profile" element={<MyProfile />} />
           </Route>

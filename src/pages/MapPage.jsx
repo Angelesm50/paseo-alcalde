@@ -1,16 +1,13 @@
-import {Box, Button, Chip, Container, CssBaseline, IconButton, Link, Menu, MenuItem, Toolbar, Typography,} from "@mui/material";
+import {Box, Button, Chip, Container, CssBaseline, Link, Toolbar, Typography,} from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MapView from "../components/maps/MapView";
 import {useState} from "react";
 import {default as data} from "../assets/images/makers/murales.json";
 import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
-import {auth, firebaseApp} from "../config/firebase";
-import {getDownloadURL, getStorage, ref} from "firebase/storage";
-import {useEffect} from "react";
+import {auth} from "../config/firebase";
 
-const MapScreen = () => {
+const MapPage = () => {
    const [anchorEl, setAnchorEl] = useState(null);
    const user = auth.currentUser;
 
@@ -56,46 +53,11 @@ const MapScreen = () => {
                         component="h1"
                         variant="h6"
                         sx={{ color: blueGrey[800], fontWeight: 500 }}>
-                        {/* {toTitleCase(user.displayName)} */}
                         Lugares del recorrido
                      </Typography>
-                     {/*<Typography
-                        component="span"
-                        variant="subtitle2"
-                        sx={{color: blueGrey[500]}}
-                     >
-                        Mi primera ruta
-                     </Typography>*/}
                   </Box>
                   <Box>
                      <Chip label="Editar ruta" variant="outlined" color="secondary"/>
-                     {/*<IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        color="inherit"
-                        onClick={handleMenu}
-                     >
-                        <MoreVertIcon sx={{color: blueGrey[900]}}/>
-                     </IconButton>
-                        <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                     }}
-                        keepMounted
-                        transformOrigin={{
-                        vertical: "top",
-                        horizontal: "right",
-                     }}
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                        >
-                        <MenuItem>Opciones</MenuItem>
-                        </Menu>*/}
                   </Box>
                </Box>
             </Toolbar>
@@ -123,4 +85,4 @@ const MapScreen = () => {
    );
 };
 
-export default MapScreen;
+export default MapPage;
