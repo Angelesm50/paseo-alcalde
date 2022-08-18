@@ -18,7 +18,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { resetPassword } from "../../services/actions/authAction";
-import Logo from "../../assets/images/logo/teal/fray.png";
+import Logo from "../../assets/images/logo/alcalde-navyblue.png";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -66,7 +66,7 @@ const ResetPasswordScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" width="30" height="30" />
+        <img src={Logo} alt="Logo" height="60" />
         <Typography component="h1" variant="h6">
           Restablecer la contraseña
         </Typography>

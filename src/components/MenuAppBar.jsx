@@ -2,7 +2,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 
-import Logo from "../assets/images/logo/white/fray.png";
+import Logo from "../../src/assets/images/logo/alcalde-white.png";
 
 const MenuAppBar = () => {
   return (
@@ -15,14 +15,7 @@ const MenuAppBar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "center" }}>
-          <Box
-            sx={{
-              height: 40,
-            }}
-            component="img"
-            alt="Logo"
-            src={Logo}
-          />
+          <img src={Logo} alt="Logo Alcalde" height="60" />
         </Toolbar>
       </AppBar>
     </Box>

@@ -15,7 +15,7 @@ import Jalisco from "../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jp
 
 const styles = {
   paperContainer: {
-    backgroundImage: `linear-gradient(to bottom, rgba(97, 151, 178, 1) 0%, rgba(244, 244, 248, 0.2) 35%, rgba(244, 245, 248, 1) 100%), url(${Jalisco})`,
+    backgroundImage: `linear-gradient(to bottom, rgba(0, 109, 129, 1) 0%, rgba(244, 244, 248, 0.2) 35%, rgba(244, 245, 248, 1) 100%), url(${Jalisco})`,
     width: "100%",
     height: "50vh",
     backgroundSize: "cover",
