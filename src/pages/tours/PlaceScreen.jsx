@@ -10,8 +10,8 @@ import {
 import { blueGrey } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
 
-import ListView from "../components/maps/ListView";
-import { default as data } from "../assets/images/makers/murales.json";
+import ListView from "../../components/maps/ListView";
+import { default as data } from "../../assets/images/makers/murales.json";
 
 const PlaceScreen = () => {
   const navigate = useNavigate();

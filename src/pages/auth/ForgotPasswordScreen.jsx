@@ -10,12 +10,11 @@ import {
   Link,
   Typography,
 } from "@mui/material";
-
-import { useDispatch } from "react-redux";
-import { forgotPassword } from "../../services/actions/authAction";
-
-import IconLock from "../../assets/images/icons/lock.png";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { forgotPassword } from "../../services/actions/authAction";
+import ForgotPasswordIcon from "../../assets/images/icons/forgot-password.png";
 
 const ForgotPasswordScreen = () => {
   const dispatch = useDispatch();
@@ -45,29 +44,26 @@ const ForgotPasswordScreen = () => {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <img src={IconLock} alt="Logo" width="150" height="150" />
-        <Typography
-          component="div"
-          variant="h5"
-          sx={{ mt: 3, fontWeight: 600 }}
-        >
+        <img
+          src={ForgotPasswordIcon}
+          alt="Logo Alcalde"
+          height="320"
+          width="320"
+          loading="lazy"
+        />
+        <Typography component="div" variant="h5" sx={{ fontWeight: 600 }}>
           ¿Olvidaste tú contraseña?
         </Typography>
         <Typography component="div" variant="caption">
           No te preocupes, puedes recuperarla
         </Typography>
-        <Box
-          component="form"
-          noValidate
-          sx={{ mt: 5 }}
-          onSubmit={sendEmailResetPassword}
-        >
+        <Box component="form" noValidate onSubmit={sendEmailResetPassword}>
           <FormControl fullWidth margin="normal" variant="standard">
             <InputLabel htmlFor="email">Correo electrónico</InputLabel>
             <Input
@@ -86,10 +82,16 @@ const ForgotPasswordScreen = () => {
             variant="contained"
             size="large"
             color="primary"
-            sx={{ mt: 3, mb: 5 }}
+            sx={{ mt: 4, mb: 1 }}
             disabled={!userData.email}
           >
-            Recuperar contraseña
+            <Typography
+              component="span"
+              variant="body1"
+              sx={{ fontWeight: 600 }}
+            >
+              Recuperar contraseña
+            </Typography>
           </Button>
           <Grid
             container
@@ -99,9 +101,9 @@ const ForgotPasswordScreen = () => {
           >
             <Link
               href="login"
-              variant="body2"
+              variant="body1"
               color="secondary"
-              sx={{ fontWeight: 500 }}
+              sx={{ fontWeight: 600 }}
             >
               Olvídalo, ya la recordé
             </Link>

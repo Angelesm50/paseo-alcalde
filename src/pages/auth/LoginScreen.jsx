@@ -21,11 +21,11 @@ import {
   InputLabel,
 } from "@mui/material";
 
-import Logo from "../../assets/images/logo/teal/fray.png";
 import {
   googleLogin,
   emailAndPasswordLogin,
 } from "../../services/actions/authAction";
+import Logo from "../../assets/images/logo/alcalde-navyblue.png";
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -76,22 +76,17 @@ const LoginScreen = () => {
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          marginTop: 3,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" height="40" />
-        <Typography component="h1" variant="h6">
+        <img src={Logo} alt="Logo Alcalde" height="60" />
+        <Typography component="h1" variant="h6" sx={{ fontWeight: 700 }}>
           Bienvenido
         </Typography>
-        <Box
-          component="form"
-          onSubmit={handleEmailAndPasswordLogin}
-          noValidate
-          sx={{ mt: 1 }}
-        >
+        <Box component="form" onSubmit={handleEmailAndPasswordLogin} noValidate>
           <FormControl fullWidth margin="normal" variant="standard">
             <InputLabel htmlFor="email">Correo electrónico</InputLabel>
             <Input
@@ -131,7 +126,7 @@ const LoginScreen = () => {
               <Typography
                 variant="body2"
                 component="span"
-                sx={{ fontWeight: 500 }}
+                sx={{ fontWeight: 600 }}
               >
                 ¿Olvidaste tú contraseña?
               </Typography>
@@ -187,7 +182,7 @@ const LoginScreen = () => {
               href="register"
               variant="body2"
               color="secondary"
-              sx={{ fontWeight: 500 }}
+              sx={{ fontWeight: 600 }}
             >
               Registrate
             </Link>
