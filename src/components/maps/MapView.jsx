@@ -15,9 +15,9 @@ const {BaseLayer} = LayersControl;
 
 const MapView = ({ places }) => {
    const childMarkersRef = useRef();
-   const icon = MarkerIconHooks(require('../../assets/images/makers/mural.png'), [25, 50], [0, -50]);
-   const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'), [25, 50], [0, -50]);
-   const iconMoney = MarkerIconHooks(require('../../assets/images/makers/money.png'), [24, 49], [0, -49]);
+   const icon = MarkerIconHooks(require('../../assets/images/makers/mural2.png'), [25, 50], [-7, -48], [60,53]);
+   const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'), [25, 50], [0, -50], [35,50]);
+   const iconMoney = MarkerIconHooks(require('../../assets/images/makers/gastronomica2.png'), [25, 50], [-7, -48], [60,53]);
    const [play, setPlay] = useState(false);
    const position = usePosition(true, {enableHighAccuracy: true});
 

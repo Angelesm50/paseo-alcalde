@@ -75,7 +75,7 @@ const WhatIsAlcaldeScreen = () => {
           variant="contained"
           size="large"
           color="primary"
-          sx={{ my: 5, width: "200px" }}
+          sx={{ my: 5 }}
           onClick={() => navigate("app")}
         >
           Regresar
