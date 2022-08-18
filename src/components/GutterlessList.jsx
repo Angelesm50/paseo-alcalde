@@ -6,32 +6,29 @@ import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRound
 import IconButton from "@mui/material/IconButton";
 import Divider from "@mui/material/Divider";
 import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
 
 const ABOUT_PASEO_ALCALDE = [
-  // {
-  //   primary: "¿Qué es paseo Alcalde?",
-  //   secondary: "Propósito e historia de la aplicación",
-  //   url: "what",
-  // },
   {
-    primary: "Lugares del recorrido",
-    secondary: "Paradas disponibles en el trayecto",
-    url: "places",
+    primary: "¿Qué es paseo Alcalde?",
+    secondary: "Propósito e historia de la aplicación",
+    url: "about",
   },
-  // {
-  //   primary: "Ajustes del recorrido",
-  //   secondary: "Ajustes generales y del perfil",
-  //   url: "configuration",
-  // },
-  // {
-  //   primary: "Involucrados en el proyecto",
-  //   secondary: "Equipo de trabajo",
-  //   url: "configuration",
-  // },
-  // {
-  //   primary: "Ajustes del recorrido",
-  //   secondary: "Ajustes generales y del perfil",
-  // },
+  {
+    primary: "Recorridos",
+    secondary: "Paradas disponibles en el trayecto",
+    url: "tours",
+  },
+  {
+    primary: "Ajustes",
+    secondary: "Ajustes generales y de perfil",
+    url: "settings",
+  },
+  {
+    primary: "Involucrados en el proyecto",
+    secondary: "Equipo de trabajo",
+    url: "team",
+  },
 ];
 
 export default function GutterlessList() {
@@ -52,8 +49,25 @@ export default function GutterlessList() {
             }
           >
             <ListItemText
-              primary={`${item.primary}`}
-              secondary={`${item.secondary}`}
+              primary={
+                <Typography
+                  type="h6"
+                  style={{ color: "#202946" }}
+                  sx={{ fontWeight: 600 }}
+                >
+                  {item.primary}
+                </Typography>
+              }
+              secondary={
+                <Typography
+                  variant="body2"
+                  component="span"
+                  color="#757575"
+                  sx={{ fontWeight: 500 }}
+                >
+                  {item.secondary}
+                </Typography>
+              }
               onClick={() => navigate(`/${item.url}`)}
             />
           </ListItem>

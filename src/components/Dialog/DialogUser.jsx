@@ -1,164 +1,216 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import MenuOpenIcon from "@mui/icons-material/ArrowForwardIos";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import IconButton from "@mui/material/IconButton";
-import {FormControl, Input, InputAdornment, InputLabel} from "@mui/material";
-import {Visibility, VisibilityOff} from "@material-ui/icons";
-import { getAuth, updateProfile, updateEmail, updatePassword} from "firebase/auth";
-import {useState} from "react";
+import { FormControl, Input, InputAdornment, InputLabel } from "@mui/material";
+import { Visibility, VisibilityOff } from "@material-ui/icons";
+import {
+  getAuth,
+  updateProfile,
+  updateEmail,
+  updatePassword,
+} from "firebase/auth";
+import { useState } from "react";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import titleize from "underscore.string/titleize";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
+import { logout } from "../../services/actions/authAction";
+import { clean } from "../../services/actions/nominaAction";
 
-export default function FormDialog({type, text}) {
-   const auth = getAuth();
-   const user = auth.currentUser;
+export default function FormDialog({ type, text }) {
+  const auth = getAuth();
+  const user = auth.currentUser;
 
-   const [datos, setDatos] = useState({
-      name: '',
-      email: '',
-      password: ''
-   })
-   const [open, setOpen] = React.useState(false);
-   const [values, setValues] = React.useState({
-      amount: '',
-      password: '',
-      weight: '',
-      weightRange: '',
-      showPassword: false,
-   });
+  const [datos, setDatos] = useState({
+    name: `${user.displayName}`,
+    email: `${user.email}`,
+    password: "",
+  });
 
-   const handleChange = (prop) => (event) => {
-      setValues({...values, [prop]: event.target.value});
-   };
+  const [open, setOpen] = useState(false);
+  const [values, setValues] = useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false,
+  });
 
-   const handleClickShowPassword = () => {
-      setValues({
-         ...values,
-         showPassword: !values.showPassword,
-      });
-   };
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
 
-   const handleMouseDownPassword = (event) => {
-      event.preventDefault();
-   };
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
 
-   const handleClickOpen = () => {
-      setOpen(true);
-   };
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
-   const handleClose = () => {
-      setOpen(false);
-   };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
-   const handleInputChange = (e) => {
-      setDatos({
-         ...datos,
-         [e.target.name]: e.target.value
-      })
-   }
+  const handleClose = () => {
+    setOpen(false);
+  };
 
-   const captureData = (e) => {
-      e.preventDefault();
-      if(type === "name"){
-         updateProfile(user, {displayName: datos.name})
-            .then(() => {
-            // Profile updated!
-            alert("Nombre cambiado")
-            window.location.reload(false);
-         }).catch((error) => {
-            // An error occurred
-            // ...
-         });
+  const handleInputChange = (e) => {
+    setDatos({
+      ...datos,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    dispatch(clean());
+  };
+
+  const captureData = (e) => {
+    e.preventDefault();
+    if (type === "name") {
+      if (datos.name.trim().length > 2) {
+        updateProfile(user, { displayName: titleize(datos.name) })
+          .then(() => {
+            handleClose();
+            toast.success("Nombre cambiado");
+          })
+          .catch((error) => {
+            toast.error(error?.message ?? "Algo salió mal");
+          });
+      } else {
+        handleClose();
       }
-      if(type === "email"){
-         updateEmail(user, datos.email).then(() => {
-            // Email updated!
-            alert("Email Cambiado")
-            window.location.reload(false);
-         }).catch((error) => {
-            // An error occurred
-            // ...
-         });
+    }
+    if (type === "email") {
+      if (datos.email.trim() !== "" || datos.email.trim().includes("@")) {
+        updateEmail(user, datos.email)
+          .then(() => {
+            handleClose();
+            toast.success("Email cambiado");
+          })
+          .catch((error) => {
+            toast.error(error?.message ?? "Algo salió mal");
+          });
+      } else {
+        handleClose();
       }
-      if(type === "email"){
-         updatePassword(user, datos.password).then(() => {
-            // Update successful.
-            alert("Contraseña Cambiado")
-            window.location.reload(false);
-         }).catch((error) => {
-            // An error ocurred
-            // ...
-         });
+    }
+    if (type === "password") {
+      if (datos.password.trim().length >= 8) {
+        updatePassword(user, datos.password)
+          .then(() => {
+            handleClose();
+            toast.success("Contraseña cambiada");
+          })
+          .catch((error) => {
+            toast.error(error?.message ?? "Algo salió mal");
+          });
+      } else {
+        handleClose();
       }
-   }
+    }
+    if (type === "logout") {
+      handleLogout();
+    }
+  };
 
-   const password = () => {
-      return (
-         <>
-            <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-            <Input
-               id="password"
-               name="password"
-               type={values.showPassword ? 'text' : 'password'}
-               value={values.password}
-               onChange={handleChange('password')}
-               endAdornment={
-                  <InputAdornment position="end">
-                     <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                     >
-                        {values.showPassword ? <VisibilityOff/> : <Visibility/>}
-                     </IconButton>
-                  </InputAdornment>
-               }
-            />
-         </>
+  const password = () => {
+    return (
+      <>
+        <InputLabel htmlFor="standard-adornment-password">
+          Contraseña
+        </InputLabel>
+        <Input
+          id="password"
+          name="password"
+          autoComplete="off"
+          type={values.showPassword ? "text" : "password"}
+          value={values.password}
+          onChange={handleChange("password")}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {values.showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+      </>
+    );
+  };
 
-      )
-   }
+  const textfield = () => {
+    return (
+      <TextField
+        defaultValue={
+          type === "email"
+            ? auth.currentUser.email
+            : auth.currentUser.displayName
+        }
+        autoFocus
+        margin="dense"
+        id={type}
+        name={type}
+        label={text}
+        variant="standard"
+        onChange={handleInputChange}
+      />
+    );
+  };
 
-   const textfield = () => {
-      return (
-         <TextField
-            defaultValue={(type === "email") ? auth.currentUser.email : auth.currentUser.displayName}
-            autoFocus
-            margin="dense"
-            id={type}
-            name={type}
-            label={text}
-            variant="standard"
-            onChange={handleInputChange}
-         />
-      )
-   }
-
-   return (
-      <div>
-         <IconButton aria-label="comment" onClick={handleClickOpen}>
-            <MenuOpenIcon/>
-         </IconButton>
-         <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>{"Cambiar " + text.toLowerCase()}</DialogTitle>
-            <DialogContent>
-               <DialogContentText style={{marginBottom: 8}}>
-                  Escribe aqui para cambiar {text.toLowerCase()} de acceso para esta aplicacion.
-               </DialogContentText>
-               <FormControl fullWidth>
-                  {(type === "password") ? password() : textfield()}
-               </FormControl>
-            </DialogContent>
-            <DialogActions>
-               <Button onClick={handleClose}>Cancel</Button>
-               <Button onClick={captureData}>Cambiar</Button>
-            </DialogActions>
-         </Dialog>
-      </div>
-   );
+  return (
+    <>
+      <IconButton
+        sx={{ color: "#84AEC2" }}
+        aria-label="comment"
+        onClick={handleClickOpen}
+      >
+        <ArrowForwardIosRoundedIcon
+          sx={{ stroke: "#84AEC2", strokeWidth: 2 }}
+          fontSize="small"
+        />
+      </IconButton>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>{text}</DialogTitle>
+        <DialogContent>
+          <DialogContentText style={{ marginBottom: 8 }}>
+            {type === "logout"
+              ? "Esta seguro que desea salir"
+              : `Escriba
+            aqui para cambiar ${text.toLowerCase()} de acceso para esta
+            aplicacion.`}
+          </DialogContentText>
+          {type === "logout" ? (
+            ""
+          ) : (
+            <FormControl fullWidth>
+              {type === "password" ? password() : textfield()}
+            </FormControl>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancelar</Button>
+          <Button onClick={captureData}>Proceder</Button>
+        </DialogActions>
+      </Dialog>
+    </>
+  );
 }

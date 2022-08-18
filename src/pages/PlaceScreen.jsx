@@ -3,18 +3,18 @@ import {
   Button,
   Container,
   CssBaseline,
-  Link,
   List,
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
 import { blueGrey } from "@mui/material/colors";
+import { useNavigate } from "react-router-dom";
 
 import ListView from "../components/maps/ListView";
 import { default as data } from "../assets/images/makers/murales.json";
 
 const PlaceScreen = () => {
+  const navigate = useNavigate();
   return (
     <>
       <CssBaseline />
@@ -46,18 +46,17 @@ const PlaceScreen = () => {
       <List>
         <ListView places={data.places} />
       </List>
-      <Container sx={{}}>
-        <Link href={"app"}>
-          <Button
-            fullWidth
-            variant="contained"
-            size="large"
-            color="primary"
-            sx={{ my: 3 }}
-          >
-            Regresar
-          </Button>
-        </Link>
+      <Container>
+        <Button
+          fullWidth
+          variant="contained"
+          size="large"
+          color="primary"
+          sx={{ my: 3 }}
+          onClick={() => navigate("app")}
+        >
+          Regresar
+        </Button>
       </Container>
     </>
   );
