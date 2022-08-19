@@ -37,9 +37,9 @@ const WhatIsAlcaldeScreen = () => {
           <Divider
             sx={{
               width: "7rem",
-              fontWeight: 500,
               borderTopWidth: "thick",
               borderTopColor: "#6197B2",
+              borderBottomWidth: "inherit",
               borderRadius: 6,
               my: 2.2,
             }}
@@ -51,9 +51,9 @@ const WhatIsAlcaldeScreen = () => {
           <Divider
             sx={{
               width: "7rem",
-              fontWeight: 500,
               borderTopWidth: "thick",
               borderTopColor: "#6197B2",
+              borderBottomWidth: "inherit",
               borderRadius: 6,
               my: 2.2,
             }}

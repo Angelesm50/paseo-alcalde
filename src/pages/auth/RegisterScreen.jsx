@@ -16,10 +16,10 @@ import {
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-
-import Logo from "../../assets/images/logo/teal/fray.png";
-import { register } from "../../services/actions/authAction";
 import titleize from "underscore.string/titleize";
+
+import { register } from "../../services/actions/authAction";
+import Logo from "../../assets/images/logo/alcalde-navyblue.png";
 
 const RegisterScreen = () => {
   const [checked, setChecked] = useState(false);
@@ -69,15 +69,14 @@ const RegisterScreen = () => {
           alignItems: "center",
         }}
       >
-        <img src={Logo} alt="Logo" height="40" />
-        <Typography component="h1" variant="h6">
+        <img src={Logo} alt="Logo Alcalde" height="60" />
+        <Typography component="h1" variant="h6" sx={{ fontWeight: 700 }}>
           Registro
         </Typography>
         <Box
           component="form"
           onSubmit={handleRegister}
           noValidate
-          sx={{ mt: 1 }}
           autoComplete="off"
         >
           <FormGroup>
@@ -174,7 +173,7 @@ const RegisterScreen = () => {
               href="login"
               variant="body2"
               color="secondary"
-              sx={{ fontWeight: 500 }}
+              sx={{ fontWeight: 600 }}
             >
               Iniciar sesión
             </Link>
