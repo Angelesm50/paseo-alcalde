@@ -77,6 +77,7 @@ export default function FormDialog({ type, text }) {
   const handleLogout = () => {
     dispatch(logout());
     dispatch(clean());
+    localStorage.removeItem("places")
   };
 
   const captureData = (e) => {

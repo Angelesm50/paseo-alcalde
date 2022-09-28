@@ -1,24 +1,16 @@
-import {Box, Button, Chip, Container, CssBaseline, Link, Toolbar, Typography,} from "@mui/material";
+import {Box, Button, Container, CssBaseline, Link, Toolbar, Typography,} from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import MapView from "../components/maps/MapView";
-import {useState} from "react";
 import {default as data} from "../assets/images/makers/murales.json";
 import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
-import {auth} from "../config/firebase";
+import DialogEditRute from "../components/Dialog/DialogEditRute";
 
 const MapPage = () => {
-    const [anchorEl, setAnchorEl] = useState(null);
-    const user = auth.currentUser;
-
-    const handleMenu = (event) => setAnchorEl(event.currentTarget);
-    const handleClose = () => setAnchorEl(null);
-    const toTitleCase = (phrase) =>
-        phrase
-            .toLowerCase()
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
+    let places = JSON.parse(localStorage.getItem("places"));
+    if (!places) {
+      localStorage.setItem("places", JSON.stringify(data.places));
+    }
 
     return (
         <>
@@ -36,7 +28,7 @@ const MapPage = () => {
                     color: "white",
                 }}
             >
-                <MapView places={data.places}/>
+                <MapView places={places}/>
             </Box>
             <Box sx={{height: "40vh", overflow: "hidden", overflowY: "scroll"}}>
                 <Toolbar>
@@ -57,14 +49,14 @@ const MapPage = () => {
                             </Typography>
                         </Box>
                         <Box>
-                            <Chip label="Editar ruta" variant="outlined" color="secondary"/>
+                            <DialogEditRute places={places}/>
                         </Box>
                     </Box>
                 </Toolbar>
                 <hr/>
                 <Box>
                     <List>
-                        <ListView places={data.places}/>
+                        <ListView places={places}/>
                     </List>
                 </Box>
                 <Container sx={{}}>

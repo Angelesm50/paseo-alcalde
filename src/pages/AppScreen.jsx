@@ -34,7 +34,7 @@ const AppScreen = () => {
         <CssBaseline />
         <MenuAppBar />
         <Container>
-          <Container maxWidth="xs">
+          <Container>
             <Button
               fullWidth
               variant="contained"

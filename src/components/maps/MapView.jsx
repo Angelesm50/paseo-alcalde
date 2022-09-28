@@ -41,10 +41,10 @@ const MapView = ({ places }) => {
 
    return (
       <MapContainer style={{width: "100%", height: "60vh", position: 'absolute', zIndex: 0, color: "black"}}
-                    center={[20.658293344005582, -103.43989978205852]}
+                    center={[20.677875212118234, -103.34778035158236]}
                     fullscreenControl={true}
                     zoomControl={false}
-                    zoom={16}>
+                    zoom={15}>
          <LayersControl>
             <BaseLayer name="Satelite">
                <ReactLeafletGoogleLayer type={'satellite'} />
@@ -58,7 +58,7 @@ const MapView = ({ places }) => {
          <ZoomControl position="bottomright"/>
          <Markers ref={childMarkersRef} places={places} icon={icon} iconMoney={iconMoney} />
          <MakerUser position={position} icon={iconUser}/>
-         <Routing places={places} user={position}/>
+         {/*<Routing places={places} user={position}/>*/}
       </MapContainer>
    )
 }

@@ -44,7 +44,7 @@ const AppRouter = () => {
               element={<ResetPasswordScreen />}
             />
             <Route path="/app" element={<AppScreen />} />
-            <Route path="/map" element={<MapScreen />} />
+            <Route forceRefresh={true} path="/map" element={<MapScreen />} />
             <Route path="/about" element={<WhatIsAlcaldeScreen />} />
             <Route path="/tours" element={<ToursScreen />} />
             <Route path="/settings" element={<MyProfile />} />
