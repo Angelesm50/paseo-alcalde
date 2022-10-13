@@ -3,7 +3,7 @@ import MarkerIconHooks from "./MarkerIconHooks";
 import Markers from "./Makers";
 import 'leaflet/dist/leaflet.css';
 import MakerUser from "./MakerUser";
-import Routing from "./Routing";
+// import Routing from "./Routing";
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 import ReactLeafletGoogleLayer from 'react-leaflet-google-layer';

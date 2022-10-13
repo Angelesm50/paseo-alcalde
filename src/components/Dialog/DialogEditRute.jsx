@@ -1,20 +1,11 @@
+import {useState,forwardRef} from 'react';
+
 import {
-    useState,forwardRef
-} from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import ListItem from '@mui/material/ListItem';
-import List from '@mui/material/List';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
-import Slide from '@mui/material/Slide';
-import { default as data } from "../../assets/images/makers/murales.json";
-import { useNavigate } from "react-router-dom";
-import Switch from '@mui/material/Switch';
-import Divider from '@mui/material/Divider';
+    Button, Dialog, ListItem, List, AppBar, Toolbar, Typography, Slide, Switch, Divider
+} from '@mui/material';
+
+import {EditLocation} from '@mui/icons-material/';
+
 
 
 
@@ -49,7 +40,7 @@ export default function DialogEditRute({places: propPlaces}) {
 
     return (
       <div>
-          <Button variant="outlined" onClick={handleClickOpen}>
+          <Button variant="contained" endIcon={<EditLocation/>} onClick={handleClickOpen}>
               Editar Ruta
           </Button>
           <Dialog
@@ -63,7 +54,7 @@ export default function DialogEditRute({places: propPlaces}) {
                       <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
                           Editar
                       </Typography>
-                      <Button autoFocus color="inherit" onClick={handleCloseAndSave}>
+                      <Button variant="outlined" color="inherit" onClick={handleCloseAndSave}>
                           Guardar
                       </Button>
                   </Toolbar>

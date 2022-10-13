@@ -24,6 +24,6 @@ export default function ProtectedRoute(props) {
   return currentUser ? (
     <Outlet {...props} />
   ) : (
-    <Navigate to="/" state={{ from: pathname }} />
+    <Navigate to="/" replace />
   );
 }

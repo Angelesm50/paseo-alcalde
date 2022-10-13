@@ -22,7 +22,7 @@ const ListView = ({places}) => {
             // toast.error(error?.message ?? "Something went wrong");
          }
       })();
-   }, [storage]);
+   }, [storage,places]);
    return places.map((place, i) => (
       <div key={i}>
          <Box>

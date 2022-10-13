@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import { useNavigate } from "react-router-dom";
+import {motion} from "framer-motion";
 
 import MenuAppBar from "../components/MenuAppBar";
 import GutterlessList from "../components/GutterlessList";
@@ -29,7 +30,7 @@ const styles = {
 const AppScreen = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <motion.div  initial={{width: 0}} animate={{width: "100%"}} exit={{x: window.innerWidth, transition: {duration: 0.1}}}>
       <Paper elevation={0} style={styles.paperContainer}>
         <CssBaseline />
         <MenuAppBar />
@@ -60,7 +61,7 @@ const AppScreen = () => {
           <GutterlessList />
         </Container>
       </Paper>
-    </>
+    </motion.div>
   );
 };
 

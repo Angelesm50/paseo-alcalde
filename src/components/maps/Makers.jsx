@@ -1,11 +1,7 @@
 import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded";
 
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import { Chip } from "@mui/material";
+import { Chip, Button, Box, Typography, CardMedia, CardContent, CardActions } from "@mui/material";
+import {PlayArrowRounded} from "@mui/icons-material";
 
 import AudioPlayer from "material-ui-audio-player";
 
@@ -16,7 +12,7 @@ import { firebaseApp } from "../../config/firebase";
 import { useMap } from "react-leaflet/hooks";
 
 const Markers = forwardRef(({ icon, iconMoney, places }, forwardedRef) => {
-  const storage = getStorage(firebaseApp);
+  const storage = getStorage(firebaseApp)
   const map = useMap();
   const makersRef = useRef({});
 
@@ -33,7 +29,7 @@ const Markers = forwardRef(({ icon, iconMoney, places }, forwardedRef) => {
         // toast.error(error?.message ?? "Something went wrong");
       }
     })();
-  }, [places]);
+  }, [places,storage]);
 
   useImperativeHandle(forwardedRef, () => ({
     flyTo(lat, lng, placeId) {
@@ -88,30 +84,31 @@ const Markers = forwardRef(({ icon, iconMoney, places }, forwardedRef) => {
                         />
                       }
                   />
-                  {/*<Button*/}
-                  {/*  variant="contained"*/}
-                  {/*  size="small"*/}
-                  {/*  sx={{*/}
-                  {/*    fontSize: "small",*/}
-                  {/*    p: 0.1,*/}
-                  {/*    px: 1,*/}
-                  {/*    "& .MuiButton-startIcon": { marginRight: "4px" },*/}
-                  {/*  }}*/}
-                  {/*  startIcon={*/}
-                  {/*    <PlayArrowRoundedIcon*/}
-                  {/*      style={{ marginRight: 0 }}*/}
-                  {/*      sx={{ fontSize: "small", transform: "rotate(270deg)" }}*/}
-                  {/*    />*/}
-                  {/*  }*/}
-                  {/*>*/}
-                  {/*  iniciar*/}
-                  {/*</Button>*/}
+                  <Button
+                    variant="contained"
+                    size="small"
+                    sx={{
+                      fontSize: "small",
+                      p: 0.1,
+                      px: 1,
+                      "& .MuiButton-startIcon": { marginRight: "4px" },
+                    }}
+                    startIcon={
+                      <PlayArrowRounded
+                        style={{ marginRight: 0 }}
+                        sx={{ fontSize: "small", transform: "rotate(270deg)" }}
+                      />
+                    }
+                  >
+                    iniciar
+                  </Button>
                 </CardActions>
               </Box>
             </Popup>
           </Marker>
       )
     }
+    return null;
   });
 });
 
