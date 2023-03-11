@@ -12,7 +12,7 @@ const MapPage = ({tipo}) => {
     if (!places) {
       localStorage.setItem("places", JSON.stringify(data.places));
     }
-    const lugares = (tipo === "all") ? places : places.filter(obj => obj.type === tipo);
+    let lugares = (tipo === "all") ? places : places.filter(obj => obj.type === tipo);
 
     return (
         <motion.div
