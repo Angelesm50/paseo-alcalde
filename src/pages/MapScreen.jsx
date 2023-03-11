@@ -5,6 +5,7 @@ import {default as data} from "../assets/images/makers/murales.json";
 import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
 import DialogEditRute from "../components/Dialog/DialogEditRute";
+import {motion} from "framer-motion";
 
 const MapPage = () => {
     let places = JSON.parse(localStorage.getItem("places"));
@@ -13,7 +14,11 @@ const MapPage = () => {
     }
 
     return (
-        <>
+        <motion.div
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.2}}
+        >
             <CssBaseline/>
             <Box
                 sx={{
@@ -73,7 +78,7 @@ const MapPage = () => {
                     </Link>
                 </Container>
             </Box>
-        </>
+        </motion.div>
     );
 };
 

@@ -29,8 +29,20 @@ const styles = {
 
 const AppScreen = () => {
   const navigate = useNavigate();
+  const transition = { duration: 0.5, ease: "easeInOut" };
+  const postVariants = {
+    initial: { y: 100, opacity: 0 },
+    enter: { y: 0, opacity: 1, transition },
+    exit: { y: -100, opacity: 0, transition }
+  };
   return (
-    <motion.div  initial={{width: 0}} animate={{width: "100%"}} exit={{x: window.innerWidth, transition: {duration: 0.1}}}>
+      <motion.div
+          className="page"
+          initial="exit"
+          animate="enter"
+          exit="exit"
+          variants={postVariants}
+      >
       <Paper elevation={0} style={styles.paperContainer}>
         <CssBaseline />
         <MenuAppBar />
@@ -44,8 +56,7 @@ const AppScreen = () => {
               style={{ marginTop: "25vh" }}
               sx={{ mb: 3 }}
               onClick={() => navigate("/map")}
-            >
-              Iniciar recorrido
+            >recorrido
             </Button>
           </Container>
           <Typography

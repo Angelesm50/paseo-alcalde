@@ -14,11 +14,12 @@ import TeamScreen from "../pages/team/TeamScreen";
 import {useAuth} from "../services/auth/AuthContext";
 import {AnimatePresence} from "framer-motion";
 
-const AnimatedRoutes = () => {
+const AnimatedRoutes = ({ isVisible }) => {
     const { currentUser } = useAuth();
     const location = useLocation();
+    isVisible= true;
     return (
-        <AnimatePresence>
+        <AnimatePresence mode={"wait"}>
             <Routes location={location} key={location.pathname}>
                 <Route element={<ProtectedRoute user={currentUser}/>}>
                     <Route end path="/" element={<WelcomeScreen/>}/>
