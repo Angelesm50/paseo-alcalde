@@ -1,5 +1,5 @@
 import {Navigate, Route, Routes, useLocation} from "react-router-dom";
-import ProtectedRoute from "../routes/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 import WelcomeScreen from "../pages/WelcomeScreen";
 import LoginScreen from "../pages/auth/LoginScreen";
 import RegisterScreen from "../pages/auth/RegisterScreen";
@@ -36,7 +36,10 @@ const AnimatedRoutes = ({ isVisible }) => {
                         element={<ResetPasswordScreen/>}
                     />
                     <Route path="/app" element={<AppScreen/>}/>
-                    <Route forceRefresh={true} path="/map" element={<MapScreen/>}/>
+                    <Route forceRefresh={true} path="/map" element={<MapScreen tipo={'all'}/>}/>
+                    <Route path="/gastronomy" element={<MapScreen tipo='gastronomica'/>}/>
+                    <Route path="/murals" element={<MapScreen tipo='mural'/>}/>
+                    <Route path="/fray" element={<MapScreen tipo='fray'/>}/>
                     <Route path="/about" element={<WhatIsAlcaldeScreen/>}/>
                     <Route path="/tours" element={<ToursScreen/>}/>
                     <Route path="/settings" element={<MyProfile/>}/>

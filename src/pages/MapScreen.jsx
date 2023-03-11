@@ -7,11 +7,12 @@ import List from "@mui/material/List";
 import DialogEditRute from "../components/Dialog/DialogEditRute";
 import {motion} from "framer-motion";
 
-const MapPage = () => {
+const MapPage = ({tipo}) => {
     let places = JSON.parse(localStorage.getItem("places"));
     if (!places) {
       localStorage.setItem("places", JSON.stringify(data.places));
     }
+    const lugares = (tipo === "all") ? places : places.filter(obj => obj.type === tipo);
 
     return (
         <motion.div
@@ -33,7 +34,7 @@ const MapPage = () => {
                     color: "white",
                 }}
             >
-                <MapView places={places}/>
+                <MapView places={lugares}/>
             </Box>
             <Box sx={{height: "40vh", overflow: "hidden", overflowY: "scroll"}}>
                 <Toolbar>
@@ -54,14 +55,14 @@ const MapPage = () => {
                             </Typography>
                         </Box>
                         <Box>
-                            <DialogEditRute places={places}/>
+                            <DialogEditRute places={lugares}/>
                         </Box>
                     </Box>
                 </Toolbar>
                 <hr/>
                 <Box>
                     <List>
-                        <ListView places={places}/>
+                        <ListView places={lugares}/>
                     </List>
                 </Box>
                 <Container sx={{}}>

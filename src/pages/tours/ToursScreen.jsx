@@ -18,22 +18,25 @@ import PanoramaIcon from "@mui/icons-material/Panorama";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-import ProfilePicture from "../../assets/images/icons/background-profile.png";
+import fray from "../../assets/images/places/apple-splash-1792-828.jpg";
+import gastro from "../../assets/images/places/Santuario-Buñuelos_Angelica Guerra.jpg";
+import mural from "../../assets/images/places/jalisco-a-sus-hijos-esclarecidos.jpg";
+
 
 const TOURS = [
     {
         title: "Murales",
         description: "Conoce los murales más emblematicos de la ciudad.",
-        image: `${PanoramaIcon}`,
+        image: mural,
         icon: (
             <PanoramaIcon fontSize="large" sx={{ml: 8, mt: 4, color: "#E57E93"}}/>
         ),
         url: "murals",
     },
     {
-        title: "Gastronomía",
-        description: "Prueba las delicias culinarias de los arrededores.",
-        image: `${RestaurantMenuIcon}`,
+        title: "Gastronomica",
+        description: "Entre sabores y la herencia de Fray Antonio Alcalde.",
+        image: gastro,
         icon: (
             <RestaurantMenuIcon
                 fontSize="large"
@@ -41,6 +44,18 @@ const TOURS = [
             />
         ),
         url: "gastronomy",
+    },
+    {
+        title: "Fray Antonio Alcalde",
+        description: "Un recorrido por su obra.",
+        image: fray,
+        icon: (
+            <RestaurantMenuIcon
+                fontSize="large"
+                sx={{ml: 8, mt: 4, color: "#E57E93"}}
+            />
+        ),
+        url: "fray",
     },
 ];
 
@@ -96,7 +111,7 @@ const ToursScreen = () => {
                                 <CardMedia
                                     component="img"
                                     height="140"
-                                    image={ProfilePicture}
+                                    image={card.image}
                                     alt={card.title}
                                 />
                                 <CardContent>
@@ -110,16 +125,16 @@ const ToursScreen = () => {
                                         <Typography variant="h5" component="div">
                                             {card.title}
                                         </Typography>
-                                        <IconButton sx={{color: "#84AEC2"}} aria-label="item">
+                                        <IconButton sx={{color: "#84AEC2"}} aria-label="item" onClick={() => navigate("/"+ card.url +"")}>
                                             <ArrowForwardIosRoundedIcon
                                                 sx={{stroke: "#84AEC2", strokeWidth: 2}}
                                                 fontSize="small"
                                             />
                                         </IconButton>
                                     </Box>
-                                    {/* <Typography variant="body2" color="text.secondary">
-                    {card.description}
-                  </Typography> */}
+                                    <Typography variant="body2" color="text.secondary">
+                                        {card.description}
+                                    </Typography>
                                 </CardContent>
                             </Card>
                         </Grid>

@@ -108,7 +108,7 @@
       "audio": "jardindelsantuario.mp3",
       "photo": "jardindelsantuario.jpeg",
       "type": "gastronomica",
-      "id":  9,
+      "id":  10,
       "active": true
     },
     {
@@ -119,7 +119,7 @@
       "audio": "panteondebelen.mp3",
       "photo": "pantelondebelen.jpeg",
       "type": "gastronomica",
-      "id":  9,
+      "id":  11,
       "active": true
     },
     {
@@ -130,7 +130,7 @@
       "audio": "mercardoalcalde.mp3",
       "photo": "mercardoalcalde.jpg",
       "type": "gastronomica",
-      "id":  9,
+      "id":  12,
       "active": true
     },
     {
@@ -141,7 +141,7 @@
       "audio": "parquereforma.mp3",
       "photo": "parquereforma.jpg",
       "type": "gastronomica",
-      "id":  9,
+      "id":  13,
       "active": true
     },
     {
@@ -152,7 +152,7 @@
       "audio": "plazaguadalajara.mp3",
       "photo": "plazaguadalajara.jpg",
       "type": "gastronomica",
-      "id":  9,
+      "id":  14,
       "active": true
     },
     {
@@ -163,7 +163,7 @@
       "audio": "jardindelsantuario.mp3",
       "photo": "jardindelsantuario.jpeg",
       "type": "fray",
-      "id":  11,
+      "id":  15,
       "active": true
     },
     {
@@ -174,7 +174,7 @@
       "audio": "frayescultura.mp3",
       "photo": "frayescultura.png",
       "type": "fray",
-      "id":  12,
+      "id":  16,
       "active": true
     },
     {
@@ -185,7 +185,7 @@
       "audio": "santuariodenuestrasenora.mp3",
       "photo": "santuariodenuestrasenora.jpeg",
       "type": "fray",
-      "id":  13,
+      "id":  17,
       "active": true
     },
     {
@@ -196,7 +196,7 @@
       "audio": "hospitalcivil.mp3",
       "photo": "hospitalcivil.jpeg",
       "type": "fray",
-      "id":  14,
+      "id":  18,
       "active": true
     },
     {
@@ -207,7 +207,7 @@
       "audio": "templodenuestrasenora.mp3",
       "photo": "templodenuestrasenora.jpeg",
       "type": "fray",
-      "id":  15,
+      "id":  19,
       "active": true
     },
     {
@@ -218,7 +218,7 @@
       "audio": "jardinbotanico.mp3",
       "photo": "jardinbotanico.jpeg",
       "type": "fray",
-      "id":  16,
+      "id":  20,
       "active": true
     },
     {
@@ -229,7 +229,7 @@
       "audio": "pantelondebelen.mp3",
       "photo": "pantelondebelen.jpeg",
       "type": "fray",
-      "id":  17,
+      "id":  21,
       "active": true
     },
     {
@@ -240,7 +240,7 @@
       "audio": "lascuadritas.mp3",
       "photo": "lascuadritas.jpeg",
       "type": "fray",
-      "id":  18,
+      "id":  22,
       "active": true
     }
   ]
