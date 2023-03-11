@@ -79,7 +79,8 @@ const TEAM = [
     },
     {
         name: "Leonardo Uriel Ulloa Mora",
-        role: "Desarrollo de Backend"
+        role: "Desarrollo de Backend",
+        gmail: "masterllamas@gmail.com",
     },
     {
         name: "Lorena Itzel Orozco Maciel",
@@ -172,8 +173,9 @@ const TeamScreen = () => {
                                 >
                                     <Avatar
                                         alt="Remy Sharp"
-                                        src={ProfilePicture}
+                                        src={<ProfilePicture gmail={card.email}/>}
                                         sx={{width: 100, height: 100}}
+
                                     />
                                 </Box>
                                 <CardContent sx={{flexGrow: 1, textAlign: "center"}}>

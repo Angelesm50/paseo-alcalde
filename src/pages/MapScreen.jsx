@@ -6,6 +6,7 @@ import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
 import DialogEditRute from "../components/Dialog/DialogEditRute";
 import {motion} from "framer-motion";
+import Routing from "../components/maps/Routing";
 
 const MapPage = ({tipo}) => {
     let places = JSON.parse(localStorage.getItem("places"));
@@ -34,7 +35,7 @@ const MapPage = ({tipo}) => {
                     color: "white",
                 }}
             >
-                <MapView places={lugares}/>
+                <MapView places={lugares} tipo={tipo}/>
             </Box>
             <Box sx={{height: "40vh", overflow: "hidden", overflowY: "scroll"}}>
                 <Toolbar>
@@ -54,9 +55,7 @@ const MapPage = ({tipo}) => {
                                 Lugares del recorrido
                             </Typography>
                         </Box>
-                        <Box>
-                            <DialogEditRute places={lugares}/>
-                        </Box>
+                        {tipo === "all" ? <DialogEditRute places={lugares}/> : <></>}
                     </Box>
                 </Toolbar>
                 <hr/>

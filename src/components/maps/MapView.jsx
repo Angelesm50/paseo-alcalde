@@ -3,17 +3,17 @@ import MarkerIconHooks from "./MarkerIconHooks";
 import Markers from "./Makers";
 import 'leaflet/dist/leaflet.css';
 import MakerUser from "./MakerUser";
-// import Routing from "./Routing";
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 import ReactLeafletGoogleLayer from 'react-leaflet-google-layer';
 import { useEffect, useRef, useState } from "react";
 import {distance} from "../../helpers/distance";
 import {usePosition} from "../../hooks/usePosition";
+import Routing from "./Routing";
 
 const {BaseLayer} = LayersControl;
 
-const MapView = ({ places }) => {
+const MapView = ({ places, tipo }) => {
    const childMarkersRef = useRef();
    const iconUser = MarkerIconHooks(require('../../assets/images/makers/marker-small.png'), [25, 50], [0, -50], [35,50]);
    const [play, setPlay] = useState(false);
@@ -56,7 +56,7 @@ const MapView = ({ places }) => {
          <ZoomControl position="bottomright"/>
          <Markers ref={childMarkersRef} places={places} position={position}/>
          <MakerUser position={position} icon={iconUser}/>
-         {/*<Routing places={places} user={position}/>*/}
+         {tipo !== "all" ? <Routing places={places}/> : <></>}
       </MapContainer>
    )
 }
