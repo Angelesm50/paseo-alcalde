@@ -51,15 +51,15 @@ const TEAM = [
     },
     {
         name: "Dra. Eva Angélica Guerra Ávalos",
-        role: "Autora Ruta Gastronómica y de Tradiciones"
+        role: "Autora Ruta Gastronómica y de Fray Antonio"
     },
     {
         name: "Lucía González Torreros",
-        role: ""
+        role: "Autora Ruta de Fray Antonio Alcalde"
     },
     {
         name: "José Luis Santana Medina",
-        role: ""
+        role: "Autor Ruta de Fray Antonio Alcalde"
     },
     {
         name: "Dr. Yehoshua Aguilar Molina",
@@ -103,6 +103,7 @@ const TeamScreen = () => {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 0.2}}
+            exit={{opacity: 0}}
         >
             <Container component="main" sx={{mt: 3}}>
                 <CssBaseline/>
@@ -173,9 +174,8 @@ const TeamScreen = () => {
                                 >
                                     <Avatar
                                         alt="Remy Sharp"
-                                        src={<ProfilePicture gmail={card.email}/>}
+                                        src={ProfilePicture}
                                         sx={{width: 100, height: 100}}
-
                                     />
                                 </Box>
                                 <CardContent sx={{flexGrow: 1, textAlign: "center"}}>

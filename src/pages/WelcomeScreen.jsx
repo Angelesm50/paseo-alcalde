@@ -30,6 +30,7 @@ const WelcomeScreen = () => {
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 0.2}}
+            exit={{opacity: 0}}
         >
             <Paper elevation={0} style={styles.paperContainer}>
                 <Container component="main" maxWidth="xs">
