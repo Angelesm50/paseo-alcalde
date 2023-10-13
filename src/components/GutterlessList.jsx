@@ -10,7 +10,7 @@ import { Typography } from "@mui/material";
 
 const ABOUT_PASEO_ALCALDE = [
   {
-    primary: "¿Qué es paseo Alcalde?",
+    primary: "¿Qué es el Paseo Literario Alcalde?",
     secondary: "Propósito e historia de la aplicación",
     url: "about",
   },
