@@ -1,8 +1,6 @@
 import DirectionsWalkRoundedIcon from "@mui/icons-material/DirectionsWalkRounded";
 
-import {Chip, Box, Typography, CardMedia, CardContent, CardActions, Button} from "@mui/material";
-import {PlayArrowRounded} from "@mui/icons-material";
-
+import {Chip, Box, Typography, CardMedia, CardContent, CardActions} from "@mui/material";
 
 
 import AudioPlayer from "material-ui-audio-player";
@@ -44,7 +42,7 @@ const Markers = forwardRef(({icon, places, position}, forwardedRef) => {
     }));
     return places.map((place, i) => {
         const icon = MarkerIconHooks(require('../../assets/images/makers/'+ place.type +'.png'), [25, 50], [-7, -48], [60,53]);
-        let distance = leaflet.latLng(position).distanceTo(leaflet.latLng(place.geometry));
+        let distance = leaflet?.latLng(position).distanceTo(leaflet?.latLng(place.geometry));
         let time = distance / 30;
         if (place.active) {
             return (
@@ -55,7 +53,7 @@ const Markers = forwardRef(({icon, places, position}, forwardedRef) => {
                         icon={icon}
                         id={place.id}
                         ref={(el) => (makersRef.current[place.id] = el)}
-                        eventHandlers={{click: (e) => map.flyTo(e.latlng + 0.00534, 16)}}
+                        eventHandlers={{click: (e) => map.flyTo(e?.latlng + 0.00534, 16)}}
                     >
                         <Popup closeOnClick={false}>
                             <Box sx={{m: 0, width: 200, maxWidth: 250, maxHeight: 300}}>

@@ -25,7 +25,7 @@ import mural from "../../assets/images/places/jalisco-a-sus-hijos-esclarecidos.j
 
 const TOURS = [
     {
-        title: "Murales",
+        title: "Ruta de Murales",
         description: "Conoce los murales más emblematicos de la ciudad.",
         image: mural,
         icon: (
@@ -34,7 +34,7 @@ const TOURS = [
         url: "murals",
     },
     {
-        title: "Gastronomica",
+        title: "Ruta Gastronómica y de Tradiciones",
         description: "Entre sabores y la herencia de Fray Antonio Alcalde.",
         image: gastro,
         icon: (
@@ -46,7 +46,7 @@ const TOURS = [
         url: "gastronomy",
     },
     {
-        title: "Fray Antonio Alcalde",
+        title: "Legado de Fray Antonio Alcalde",
         description: "Un recorrido por su obra.",
         image: fray,
         icon: (
@@ -77,7 +77,7 @@ const ToursScreen = () => {
                     color="primary"
                     sx={{fontWeight: 500, textAlign: "center"}}
                 >
-                    Recorridos
+                    Rutas
                 </Typography>
                 <Box
                     sx={{display: "flex", justifyContent: "center", mb: 2}}
