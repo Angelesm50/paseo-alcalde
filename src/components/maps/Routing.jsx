@@ -7,7 +7,7 @@ import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 const createRoutineMachineLayer = (props) => {
    const places = props.places
        .filter(place => place.active)
-       .map(place => L.latLng(place.geometry[0], place.geometry[1]));
+       .map(place => L?.latLng(place.geometry[0], place.geometry[1]));
    console.log(places)
 
    return L.Routing.control({

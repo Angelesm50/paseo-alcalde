@@ -24,12 +24,12 @@ const MapView = ({ places, tipo }) => {
          name: place.name,
          geometry: place.geometry,
          id: place.id,
-         distance: distance(place.geometry[0], place.geometry[1], position.lat, position.lng, "K") * 1000
+         distance: distance(place.geometry[0], place.geometry[1], position?.lat, position?.lng, "K") * 1000
       }));
       const place = distanceInMeter.find(place => place.distance >= 0 && place.distance <= 5);
 
       if (place && !play) {
-         childMarkersRef.current.flyTo(position.lat, position.lng, place.id);
+         childMarkersRef.current.flyTo(position?.lat, position?.lng, place.id);
          setPlay(true);
       }
       if (!place && play) {

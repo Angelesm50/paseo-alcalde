@@ -6,7 +6,6 @@ import ListView from "../components/maps/ListView";
 import List from "@mui/material/List";
 import DialogEditRute from "../components/Dialog/DialogEditRute";
 import {motion} from "framer-motion";
-import Routing from "../components/maps/Routing";
 
 const MapPage = ({tipo}) => {
     let places = JSON.parse(localStorage.getItem("places"));

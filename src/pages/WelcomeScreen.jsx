@@ -63,17 +63,17 @@ const WelcomeScreen = () => {
                     >
                         Iniciar Sesión
                     </Button>
-                    <Button
-                        type="button"
-                        fullWidth
-                        variant="contained"
-                        size="large"
-                        color="primary"
-                        sx={{mt: 2}}
-                        onClick={() => navigate("register")}
-                    >
-                        Registrarse
-                    </Button>
+                    {/*<Button*/}
+                    {/*    type="button"*/}
+                    {/*    fullWidth*/}
+                    {/*    variant="contained"*/}
+                    {/*    size="large"*/}
+                    {/*    color="primary"*/}
+                    {/*    sx={{mt: 2}}*/}
+                    {/*    onClick={() => navigate("register")}*/}
+                    {/*>*/}
+                    {/*    Registrarse*/}
+                    {/*</Button>*/}
                 </Container>
             </Paper>
         </motion.div>

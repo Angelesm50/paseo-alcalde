@@ -7,7 +7,7 @@
 /node
 /.firebase
 /firebase.json
-./.firebaserc
+/.firebaserc
 
 # testing
 /coverage
