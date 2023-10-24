@@ -20,10 +20,10 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 // import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import ProfilePicture from "../../assets/images/icons/background-profile.png";
-import UDG from "../../assets/images/team/udg-logo.png";
-import GOB from "../../assets/images/team/gob-logo.png";
-import CUAAD from "../../assets/images/team/cuaad-logo.png";
-import ITL from "../../assets/images/team/itl-logo.png";
+import UDG from "../../assets/images/team/UdeG-logo.png";
+import GOB from "../../assets/images/team/Gob-logo.png";
+import CUAAD from "../../assets/images/team/CUAAD-logo.png";
+import ITL from "../../assets/images/team/ITRALI-logo.png";
 
 const TEAM = [
   {
